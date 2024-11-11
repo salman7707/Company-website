@@ -8,9 +8,15 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        'spin-slow': 'spin 35s linear infinite',
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        black: "var(--black)",
+        primary: "var(--primary)",
+        secondray: "var(--secondary)",
       },
     },
   },

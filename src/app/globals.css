@@ -1,10 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+/* Define font classes */
+.font-manrope {
+  font-family: 'Manrope', sans-serif;
+}
+
+.font-Inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-inter-medium {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+.font-inter-bold {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+
+.font-poppins-medium {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --black: #000000;
+  --primary: #775EDC;
+  --secondary: #41295A;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,3 +52,7 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* .herobg{
+  background-image: url();
+} */
