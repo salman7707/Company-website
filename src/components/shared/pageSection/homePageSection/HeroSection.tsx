@@ -1,27 +1,27 @@
 "use Client";
 import React from "react";
-import HeadingLarge from "@/components/template/Header/HeadingLarge";
+import HeadingLarge from "@/components/template/headings/HeaderLarge";
 import Image from "next/image";
 import { IMAGES } from "../../../../../public/images";
-import HeadingSmall from "@/components/template/Header/HeadingSmall";
 import Button from "@/components/template/button/Button";
+import Paragraph from "@/components/template/headings/Paragraph";
 
 export default function HeroSection() {
   return (
-    <div>
-      <div className="flex items-center justify-end w-full max-w-[1210px] mx-auto gap-4">
+    <div className="pt-44 h-auto relative">
+      <div className="flex items-center relative z-10 justify-end w-full max-w-[1210px] mx-auto gap-4">
         <div className="w-full py-8 text-left space-y-6 flex items-start justify-between flex-col">
           <HeadingLarge
-            fontSize="regular"
-            fontFamily="font-manrope"
+            fontSize="64"
+            fontFamily="font-custom"
             color="black"
-            weight="semibold"
+            weight="medium"
             leading="custom"
           >
             We Build, You Grow, Blockchain Flow
           </HeadingLarge>
 
-          <HeadingSmall
+          <Paragraph
             fontSize="large"
             fontFamily="font-manrope"
             color="black"
@@ -35,8 +35,8 @@ export default function HeroSection() {
             transparency. With a team of seasoned experts, we help our clients
             embrace the future with blockchain technology. Join us in reshaping
             industries and building trust in a decentralized world.
-          </HeadingSmall>
-          <Button BgColor="primary" size="large" Color="white">
+          </Paragraph>
+          <Button bgColor="primary" size="large" color="white">
             Get Free Consultation
           </Button>
         </div>
@@ -50,6 +50,12 @@ export default function HeroSection() {
           />
         </div>
       </div>
+      <div
+        style={{
+          backgroundImage: "url('/images/sideImage/herobg.png')",
+        }}
+        className="absolute top-10 bg-cover bg-no-repeat z-0 h-[933px] bg-white w-full"
+      ></div>
     </div>
   );
 }

@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        custom:["MyCustomFont","sans-serif"]
+      },
       animation: {
         'spin-slow': 'spin 35s linear infinite',
       },
@@ -16,7 +19,9 @@ export default {
         foreground: "var(--foreground)",
         black: "var(--black)",
         primary: "var(--primary)",
-        secondray: "var(--secondary)",
+        secondary: "var(--secondary)",
+        secondaryPurple: "var(--secondary)",
+        gray: "var(--gray)",
       },
     },
   },

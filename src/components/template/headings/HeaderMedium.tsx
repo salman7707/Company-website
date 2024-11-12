@@ -3,26 +3,27 @@ import React from "react";
 interface textpage {
   children: React.ReactNode;
   fontFamily?:
+    | "font-custom"
     | "font-manrope"
     | "Inter-regular"
     | "Inter-medium"
     | "Inter-bold"
     | "Poppins-medium"
     | "Poppins-regular";
-  color?: "primary"|"secondary"|"black";
-  fontSize: "25" | "28" | "35" | "regular" | "40";
+  color?: "primary" | "secondary" | "white" | "gray";
+  fontSize?: "16" | "18" | "20" | "26";
   textAlign?: "left" | "center" | "right";
   paddingTop?: string;
   paddingBottom?: string;
-  weight?: "bold" | "semibold" | "medium";
+  weight?: "bold" | "semibold" | "medium" | "normal" | "light";
   leading?: "custom";
 }
 
-export default function HeadingLarge({
+export default function HeadingMedium({
   children,
   fontFamily = "font-manrope",
-  color = "primary",
-  fontSize = "35",
+  color = "secondary",
+  fontSize = "20",
   textAlign = "left",
   paddingTop,
   paddingBottom,
@@ -40,26 +41,37 @@ export default function HeadingLarge({
       ? "font-inter-bold"
       : fontFamily === "Poppins-medium"
       ? "font-poppins-medium"
+      : fontFamily === "font-custom"
+      ? "font-custom"
       : "font-poppins";
   const sizeClass =
-    fontSize === "25"
-      ? "text-xl"
-      : fontSize === "28"
-      ? "text-2xl"
-      : fontSize === "35"
-      ? "text-3xl"
-      : fontSize === "40" ? "text-[40px]" :   "text-6xl";
+    fontSize === "16"
+      ? "text-base"
+      : fontSize === "18"
+      ? "text-lg"
+      : fontSize === "26"
+      ? "text-[26px]"
+      : "text-xl";
   const weightClasses =
     weight === "bold"
       ? "font-bold"
       : weight === "medium"
       ? "font-medium"
+      : weight === "normal"
+      ? "font-normal"
+      : weight === "light"
+      ? "font-light"
       : "font-semibold";
   const paddingTopClass = paddingTop ? `pt-[${paddingTop}]` : "";
   const paddingBottomClass = paddingBottom ? `pb-[${paddingBottom}]` : "";
   const leadingClasses =
     leading === "custom" ? "leading-[1.3]" : "leading-none";
-  const ColorClasses = color === "primary" ? "text-primary" : color === "black"? "text-black": "text-secondary";
+  const ColorClasses =
+    color === "primary"
+      ? "text-primary"
+      : color === "white"
+      ? "text-white"
+      : color === "gray" ? "text-gray" : "text-secondary";
   return (
     <h1
       className={`${fontClass} ${ColorClasses} ${paddingTopClass} ${paddingBottomClass} text-${textAlign} ${sizeClass} ${weightClasses} ${leadingClasses}`}

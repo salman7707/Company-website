@@ -1,7 +1,9 @@
 import React from "react";
 
-interface textpage {
+interface heading {
   children: React.ReactNode;
+  fontSize?: "small" | "medium" | "large" | "extralarge";
+  color?: string;
   fontFamily?:
     | "font-manrope"
     | "Inter-regular"
@@ -9,26 +11,28 @@ interface textpage {
     | "Inter-bold"
     | "Poppins-medium"
     | "Poppins-regular";
-  color?: "primary" | "secondary";
-  fontSize?: "16" | "18" | "20";
-  textAlign?: "left" | "center" | "right";
-  paddingTop?: string;
-  paddingBottom?: string;
   weight?: "bold" | "semibold" | "medium" | "normal" | "light";
-  leading?: "custom";
+  marginTop?: string;
+  marginBottom?: string;
+  textAlign?: "left" | "center" | "right";
 }
 
-export default function HeadingMedium({
+export default function Paragraph({
   children,
+  fontSize = "medium",
+  color = "var(--black)",
   fontFamily = "font-manrope",
-  color = "secondary",
-  fontSize = "20",
+  weight,
+  marginTop,
+  marginBottom,
   textAlign = "left",
-  paddingTop,
-  paddingBottom,
-  weight = "bold",
-  leading,
-}: textpage) {
+}: heading) {
+  const fontSizeClasses =
+    fontSize === "small"
+      ? "text-sm"
+      : fontSize === "medium"
+      ? "text-base"
+      : fontSize === "large" ? "text-lg" : "text-xl";
   const fontClass =
     fontFamily === "font-manrope"
       ? "font-manrope"
@@ -41,8 +45,6 @@ export default function HeadingMedium({
       : fontFamily === "Poppins-medium"
       ? "font-poppins-medium"
       : "font-poppins";
-  const sizeClass =
-    fontSize === "16" ? "text-base" : fontSize === "18" ? "text-lg" : "text-xl";
   const weightClasses =
     weight === "bold"
       ? "font-bold"
@@ -53,16 +55,17 @@ export default function HeadingMedium({
       : weight === "light"
       ? "font-light"
       : "font-semibold";
-  const paddingTopClass = paddingTop ? `pt-[${paddingTop}]` : "";
-  const paddingBottomClass = paddingBottom ? `pb-[${paddingBottom}]` : "";
-  const leadingClasses =
-    leading === "custom" ? "leading-[1.3]" : "leading-none";
-  const ColorClasses= color === "primary" ? "text-primary": "text-secondary"
+  const textAlignClasses =
+    textAlign === "center"
+      ? "text-center"
+      : textAlign === "left"
+      ? "text-left"
+      : "text-right";
   return (
-    <h1
-      className={`${fontClass} text-secondary ${ColorClasses} ${paddingTopClass} ${paddingBottomClass} text-${textAlign} ${sizeClass} ${weightClasses} ${leadingClasses}`}
+    <p
+      className={` ${textAlignClasses} ${fontClass} ${fontSizeClasses} mt-${marginTop} mb-${marginBottom} text-${color} ${weightClasses}`}
     >
       {children}
-    </h1>
+    </p>
   );
 }

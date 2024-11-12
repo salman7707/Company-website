@@ -6,7 +6,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 export default function Navbar() {
   return (
-    <div className="bg-white shadow-2xl absolute mt-4 left-0 right-0 top-0 rounded-full w-full max-w-[1255px] mx-auto flex items-center justify-between px-4 py-2">
+    <div className="bg-white shadow-2xl absolute mt-4 z-10 left-0 right-0 top-0 rounded-full w-full max-w-[1255px] mx-auto flex items-center justify-between px-4 py-2">
       <div className="w-[25%]">
         <Image src={IMAGES.LOGO} width={230} height={160} alt="Logo" />
       </div>
@@ -40,7 +40,7 @@ export default function Navbar() {
         </div>
       </div>
       <div className="w-[25%] flex justify-end">
-        <Button BgColor="primary" size="large">
+        <Button bgColor="primary" size="large">
           Contact Us
         </Button>
       </div>
