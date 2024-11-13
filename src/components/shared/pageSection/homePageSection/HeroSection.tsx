@@ -9,14 +9,17 @@ import Paragraph from "@/components/template/headings/Paragraph";
 export default function HeroSection() {
   return (
     <div className="pt-44 h-auto relative">
-      <div className="flex items-center relative z-10 justify-end w-full max-w-[1210px] mx-auto gap-4">
-        <div className="w-full py-8 text-left space-y-6 flex items-start justify-between flex-col">
+      <div className="flex lg:flex-row flex-col-reverse items-center relative z-10 justify-end xl:w-full lg:w-[90%] max-w-[1210px] mx-auto gap-4">
+        <div className="lg:w-full md:w-[40%] w-11/12 xs:items-center py-8 space-y-6 flex lg:items-start justify-between flex-col">
           <HeadingLarge
             fontSize="64"
+            smallScreenFont="36"
+            mdScreenFont="64"
             fontFamily="font-custom"
             color="black"
             weight="medium"
             leading="custom"
+            textAlign="lg:text-left text-center"
           >
             We Build, You Grow, Blockchain Flow
           </HeadingLarge>
@@ -26,6 +29,7 @@ export default function HeroSection() {
             fontFamily="font-manrope"
             color="black"
             weight="normal"
+            textAlign="lg:text-left xs:text-center"
           >
             We&apos;re at the forefront of blockchain technology. As a dedicated
             blockchain development company, we specialize in crafting secure,
@@ -40,13 +44,15 @@ export default function HeroSection() {
             Get Free Consultation
           </Button>
         </div>
-        <div className="w-full flex justify-center">
+        <div className="lg:w-full flex justify-center sm:w-1/2 xs:w-11/12">
           <Image
             src={IMAGES.HEROMAIN}
             className="animate-spin-slow"
             alt="dimand"
+            layout="responsive"
             height={450}
             width={460}
+            sizes="(max-width:640px)100vw,(max-width:1024px)50vw,460px"
           />
         </div>
       </div>
@@ -54,7 +60,7 @@ export default function HeroSection() {
         style={{
           backgroundImage: "url('/images/sideImage/herobg.png')",
         }}
-        className="absolute top-10 bg-cover bg-no-repeat z-0 h-[933px] bg-white w-full"
+        className="absolute top-10 bg-cover  bg-no-repeat z-0 h-[933px] bg-white w-full"
       ></div>
     </div>
   );

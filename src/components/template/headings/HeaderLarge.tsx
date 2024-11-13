@@ -11,11 +11,13 @@ interface textpage {
     | "Poppins-medium"
     | "Poppins-regular";
   color?: "primary" | "secondary" | "black" | "white";
-  fontSize: "25" | "28" | "35" | "regular" | "40" | "64";
-  textAlign?: "left" | "center" | "right";
+  fontSize?: string;
+  textAlign?: string;
   paddingTop?: string;
   paddingBottom?: string;
-  weight?: "bold" | "semibold" | "medium";
+  smallScreenFont?:string;
+  mdScreenFont?:string;
+  weight?: "bold" | "semibold" | "medium" | "normal";
   leading?: "custom";
 }
 
@@ -24,9 +26,11 @@ export default function HeadingLarge({
   fontFamily = "font-manrope",
   color = "primary",
   fontSize = "35",
-  textAlign = "left",
+  textAlign,
   paddingTop,
   paddingBottom,
+  smallScreenFont,
+  mdScreenFont,
   weight = "bold",
   leading,
 }: textpage) {
@@ -44,24 +48,27 @@ export default function HeadingLarge({
       : fontFamily === "font-custom"
       ? "font-custom"
       : "font-poppins";
+
   const sizeClass =
     fontSize === "25"
-      ? "text-xl"
+      ? "lg:text-xl"
       : fontSize === "28"
-      ? "text-2xl"
+      ? "lg:text-2xl"
       : fontSize === "35"
-      ? "text-3xl"
+      ? "lg:text-3xl"
+      : fontSize === "36"
+      ? "lg:text-[36px]"
       : fontSize === "40"
-      ? "text-[40px]"
+      ? "lg:text-[40px]"
       : fontSize === "64"
-      ? "text-[64px]"
-      : "text-6xl";
+      ? "lg:text-[64px]"
+      : "";
   const weightClasses =
     weight === "bold"
       ? "font-bold"
       : weight === "medium"
       ? "font-medium"
-      : "font-semibold";
+      : weight === "normal" ? "font-normal" : "font-semibold";
   const paddingTopClass = paddingTop ? `pt-[${paddingTop}]` : "";
   const paddingBottomClass = paddingBottom ? `pb-[${paddingBottom}]` : "";
   const leadingClasses =
@@ -74,9 +81,11 @@ export default function HeadingLarge({
       : color === "white"
       ? "text-white"
       : "text-secondary";
+      const smallScreenFontClass = smallScreenFont === "36" ? "text-[36px]" : smallScreenFont === "30" ?  "text-[30px]":""
+      const mdScreenFontClass = mdScreenFont === "64" ? "md:text-[64px]" : ""
   return (
     <h1
-      className={`${fontClass} ${ColorClasses} ${paddingTopClass} ${paddingBottomClass} text-${textAlign} ${sizeClass} ${weightClasses} ${leadingClasses}`}
+      className={`${smallScreenFontClass} ${mdScreenFontClass} ${fontClass} ${ColorClasses} ${paddingTopClass} ${paddingBottomClass} ${textAlign} ${sizeClass} ${weightClasses} ${leadingClasses}`}
     >
       {children}
     </h1>

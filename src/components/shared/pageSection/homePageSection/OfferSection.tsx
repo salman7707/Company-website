@@ -8,15 +8,15 @@ import Button from "@/components/template/button/Button";
 
 export default function OfferSection() {
   return (
-    <div className="w-full z-10 relative max-w-[1210px] py-28 mx-auto flex items-end justify-center">
-      <div className="w-full">
+    <div className="xl:w-full lg:w-[90%] w-[96%] z-10 relative max-w-[1210px] py-28 mx-auto lg:space-y-0 space-y-3 flex lg:flex-row xs:flex-col xl:items-end items-center justify-center lg:space-x-3">
+      <div className="w-full flex items-center">
         <Image src={IMAGES.OFFER} alt="Offer" width={578} height={518} />
       </div>
       <div className="w-full space-y-5 flex flex-col items-start justify-between">
         <HeadingMedium fontSize="20" weight="medium" color="secondary">
           WHAT WE OFFER
         </HeadingMedium>
-        <HeadingLarge fontSize="40" color="black" leading="custom">
+        <HeadingLarge fontSize="40" color="black" leading="custom" fontFamily="font-custom" weight="medium" smallScreenFont="30">
           End-to-End Blockchain development that makes sense
         </HeadingLarge>
         <Paragraph
@@ -31,41 +31,45 @@ export default function OfferSection() {
           end-to-end delivery. This approach helps businesses accelerate time to
           market and increase customer satisfaction and profits.
         </Paragraph>
-        <div className="space-y-4">
-          <div className="flex justify-start space-x-4">
-            <Button
-              bgColor="black"
-              color="white"
-              border="black"
-              hoverBg="white"
-              hoverText="black"
-              rounded="normal"
-              size="large"
-            >
-              Dapp
-            </Button>
-            <Button
-              bgColor="black"
-              color="white"
-              border="black"
-              rounded="normal"
-              size="extralarge"
-              hoverBg="white"
-              hoverText="black"
-            >
-              DEX Development
-            </Button>
-            <Button
-              bgColor="black"
-              border="black"
-              color="white"
-              rounded="normal"
-              size="extralarge"
-              hoverBg="white"
-              hoverText="black"
-            >
-              DEFI Development
-            </Button>
+        <div className="md:block hidden space-y-4">
+          <div className="flex xl:flex-row xs:flex-col justify-start xl:space-x-4 space-x-0 xl:space-y-0 space-y-4">
+            <div className="flex space-x-4 justify-start">
+              <Button
+                bgColor="black"
+                color="white"
+                border="black"
+                hoverBg="white"
+                hoverText="black"
+                rounded="normal"
+                size="large"
+              >
+                Dapp
+              </Button>
+              <Button
+                bgColor="black"
+                color="white"
+                border="black"
+                rounded="normal"
+                size="extralarge"
+                hoverBg="white"
+                hoverText="black"
+              >
+                DEX Development
+              </Button>
+            </div>
+            <div>
+              <Button
+                bgColor="black"
+                border="black"
+                color="white"
+                rounded="normal"
+                size="extralarge"
+                hoverBg="white"
+                hoverText="black"
+              >
+                DEFI Development
+              </Button>
+            </div>
           </div>
           <div className="flex justify-start space-x-4">
             <Button

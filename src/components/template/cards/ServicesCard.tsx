@@ -13,7 +13,7 @@ interface cardInter {
 
 export default function Card({ img, heading, paragraph }: cardInter) {
   return (
-    <div className="bg-black group transition duration-300 rounded-3xl border-2 border-black hover:shadow-md hover:shadow-primary hover:border-white w-[370px] h-[300px]">
+    <div className="bg-black group transition duration-300 rounded-3xl border-2 border-black hover:shadow-md hover:shadow-primary hover:border-white w-full h-[300px]">
       <div className="flex flex-col justify-between h-full items-start px-4 py-4 ">
         <Image src={img || IMAGES.NFT } alt="nft" width={70} height={50} />
         <HeaderMedium

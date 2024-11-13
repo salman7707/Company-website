@@ -38,8 +38,9 @@
   --black: #000000;
   --primary: #775EDC;
   --secondary: #41295A;
-   --secondaryPurple:#8766DF;
+   --secondaryPurple:#664BA3;
    --gray:#909090;
+   --yellow:#faca15;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -62,3 +63,20 @@ body {
 /* .herobg{
   background-image: url();
 } */
+
+.animatetogglebtn{
+  width: 100%;
+  animation: moveSideToSide 5s ease-in-out infinite;
+}
+
+@keyframes moveSideToSide {
+  0% {
+     transform: translatex(0px);
+  }
+  50%{
+    transform: translate(20px);
+  }
+  100%{
+    transform: translate(0px);
+  }
+}

@@ -11,4 +11,5 @@ export const IMAGES = {
     CARDPIX:"/images/sideImage/cardpix2.webp",
     DEX:"/images/sideImage/dex.svg",
     DOLL:"/images/sideImage/doll.svg",
+    CLOUD:"/images/icons/cloud.svg",
 }

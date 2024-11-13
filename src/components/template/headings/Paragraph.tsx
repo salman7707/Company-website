@@ -5,16 +5,17 @@ interface heading {
   fontSize?: "small" | "medium" | "large" | "extralarge";
   color?: string;
   fontFamily?:
+    | "font-custom"
     | "font-manrope"
     | "Inter-regular"
     | "Inter-medium"
     | "Inter-bold"
     | "Poppins-medium"
     | "Poppins-regular";
+  textAlign?: string;
   weight?: "bold" | "semibold" | "medium" | "normal" | "light";
   marginTop?: string;
   marginBottom?: string;
-  textAlign?: "left" | "center" | "right";
 }
 
 export default function Paragraph({
@@ -25,14 +26,16 @@ export default function Paragraph({
   weight,
   marginTop,
   marginBottom,
-  textAlign = "left",
+  textAlign,
 }: heading) {
   const fontSizeClasses =
     fontSize === "small"
       ? "text-sm"
       : fontSize === "medium"
       ? "text-base"
-      : fontSize === "large" ? "text-lg" : "text-xl";
+      : fontSize === "large"
+      ? "text-lg"
+      : "text-xl";
   const fontClass =
     fontFamily === "font-manrope"
       ? "font-manrope"
@@ -43,8 +46,9 @@ export default function Paragraph({
       : fontFamily === "Inter-bold"
       ? "font-inter-bold"
       : fontFamily === "Poppins-medium"
-      ? "font-poppins-medium"
-      : "font-poppins";
+      ?  "font-poppins-medium"
+      : fontFamily === "font-custom"
+      ? "font-custom" : "font-poppins";
   const weightClasses =
     weight === "bold"
       ? "font-bold"
@@ -55,15 +59,9 @@ export default function Paragraph({
       : weight === "light"
       ? "font-light"
       : "font-semibold";
-  const textAlignClasses =
-    textAlign === "center"
-      ? "text-center"
-      : textAlign === "left"
-      ? "text-left"
-      : "text-right";
   return (
     <p
-      className={` ${textAlignClasses} ${fontClass} ${fontSizeClasses} mt-${marginTop} mb-${marginBottom} text-${color} ${weightClasses}`}
+      className={` ${textAlign} ${fontClass} ${fontSizeClasses} mt-${marginTop} mb-${marginBottom} text-${color} ${weightClasses}`}
     >
       {children}
     </p>

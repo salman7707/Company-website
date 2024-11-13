@@ -2,14 +2,16 @@ import HeroSection from "@/components/shared/pageSection/homePageSection/HeroSec
 import OfferSection from "@/components/shared/pageSection/homePageSection/OfferSection";
 import ServicesSection from "@/components/shared/pageSection/homePageSection/ServicesSectionTop";
 import ServiceSectionMain from "@/components/shared/pageSection/homePageSection/ServiceSectionMain";
+import FeaturedSection from "@/components/shared/pageSection/homePageSection/FeaturedSection";
 
 export default function Home() {
   return (
-    <div className="bg-white">
+    <div className="bg-white overflow-hidden">
       <HeroSection />
       <OfferSection />
       <ServicesSection />
       <ServiceSectionMain/>
+      <FeaturedSection/>
     </div>
   );
 }
