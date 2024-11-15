@@ -24,7 +24,7 @@ export default function ServiceSectionMain() {
           >
             Our Services
           </HeadingLarge>
-          <Paragraph fontSize="extralarge" textAlign="text-center">
+          <Paragraph fontSize="extralarge" color="white" textAlign="text-center">
             We make it easy to begin your Web3 journey and there’s a place for
             <br />
             everyone. Just take your pick and get started.
@@ -75,7 +75,7 @@ export default function ServiceSectionMain() {
         style={{
           backgroundImage: "url('/images/sideImage/serviceBg.png')",
         }}
-        className="absolute top-0 bottom-0 left-0 z-0 w-full h-full bg-cover bg-no-repeat"
+        className="absolute top-0 bottom-0 left-0 z-0 w-full h-full bg-cover"
       ></div>
     </div>
   );

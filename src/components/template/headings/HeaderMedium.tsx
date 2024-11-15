@@ -10,8 +10,8 @@ interface textpage {
     | "Inter-bold"
     | "Poppins-medium"
     | "Poppins-regular";
-  color?: "primary" | "secondary" | "white" | "gray";
-  fontSize?: "16" | "18" | "20" | "26";
+  color?: "primary" | "secondary" | "white" | "gray" | "black";
+  fontSize?: "16" | "18" | "20" | "24" | "26";
   textAlign?: "left" | "center" | "right";
   paddingTop?: string;
   paddingBottom?: string;
@@ -51,6 +51,8 @@ export default function HeadingMedium({
       ? "text-lg"
       : fontSize === "26"
       ? "text-[26px]"
+      : fontSize === "24"
+      ? "text-[24px]"
       : "text-xl";
   const weightClasses =
     weight === "bold"
@@ -71,7 +73,11 @@ export default function HeadingMedium({
       ? "text-primary"
       : color === "white"
       ? "text-white"
-      : color === "gray" ? "text-gray" : "text-secondary";
+      : color === "gray"
+      ? "text-gray"
+      : color === "black"
+      ? "text-black"
+      : "text-secondary";
   return (
     <h1
       className={`${fontClass} ${ColorClasses} ${paddingTopClass} ${paddingBottomClass} text-${textAlign} ${sizeClass} ${weightClasses} ${leadingClasses}`}

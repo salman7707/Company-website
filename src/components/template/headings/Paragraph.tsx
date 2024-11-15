@@ -2,7 +2,7 @@ import React from "react";
 
 interface heading {
   children: React.ReactNode;
-  fontSize?: "small" | "medium" | "large" | "extralarge";
+  fontSize?: "extrasmall" | "small" | "medium" | "large" | "extralarge";
   color?: string;
   fontFamily?:
     | "font-custom"
@@ -31,6 +31,8 @@ export default function Paragraph({
   const fontSizeClasses =
     fontSize === "small"
       ? "text-sm"
+      : fontSize === "extrasmall"
+      ? "text-xs"
       : fontSize === "medium"
       ? "text-base"
       : fontSize === "large"
@@ -46,9 +48,10 @@ export default function Paragraph({
       : fontFamily === "Inter-bold"
       ? "font-inter-bold"
       : fontFamily === "Poppins-medium"
-      ?  "font-poppins-medium"
+      ? "font-poppins-medium"
       : fontFamily === "font-custom"
-      ? "font-custom" : "font-poppins";
+      ? "font-custom"
+      : "font-poppins";
   const weightClasses =
     weight === "bold"
       ? "font-bold"

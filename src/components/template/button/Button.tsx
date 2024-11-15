@@ -4,7 +4,7 @@ interface Button {
   children: React.ReactNode;
   bgColor?: string;
   HandleClick?: () => void;
-  size?: "large" | "extralarge" | "small";
+  size?: "large" | "extralarge" | "small" | "extrasmall";
   fontSize?: "large" | "medium" | "small";
   color?: string;
   rounded?: "full" | "medium" | "null" | "normal";
@@ -32,20 +32,20 @@ export default function Button({
       ? "px-5 py-2"
       : size === "extralarge"
       ? "px-6 py-3"
-      : "px-3 py-2";
+      : size === "extrasmall" ? "py-1 px-2" : "px-3 py-2";
   const fontClasses = fontSize === "large" ? "text-xl font-medium" : "";
   const BgColorClass =
     bgColor === "primary"
       ? "bg-primary"
       : bgColor === "black"
       ? "bg-black"
-      : bgColor === "secondaryPurple" ? "bg-secondaryPurple" : "";
+      : bgColor === "secondaryPurple" ? "bg-secondaryPurple" : bgColor === "green" ? "bg-green-500" : "";
   const ColorClass =
     color === "primary"
       ? "text-primary"
       : color === "black"
       ? "text-black"
-      : color === "secondaryPurple" ? "text-secondaryPurple": "";
+      : color === "white" ? "text-white" : color === "secondaryPurple" ? "text-secondaryPurple": "";
   const RoundedClass =
     rounded === "full"
       ? "rounded-full"

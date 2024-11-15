@@ -50,7 +50,7 @@ export default function Navbar() {
         <div className="flex items-center space-x-8">
           <ToggleBtn />
           <div className="hidden xl:block">
-            <Button bgColor="primary" size="extralarge">
+            <Button bgColor="primary" color="white" size="extralarge">
               Contact Us
             </Button>
           </div>

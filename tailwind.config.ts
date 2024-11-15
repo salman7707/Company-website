@@ -29,6 +29,7 @@ export default {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
         secondaryPurple: "var(--secondary)",
+        darkpurple: "var(--darkpurple)",
         gray: "var(--gray)",
         yellow: "var(--yellow)",
       },

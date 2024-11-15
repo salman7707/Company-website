@@ -3,6 +3,9 @@ import OfferSection from "@/components/shared/pageSection/homePageSection/OfferS
 import ServicesSection from "@/components/shared/pageSection/homePageSection/ServicesSectionTop";
 import ServiceSectionMain from "@/components/shared/pageSection/homePageSection/ServiceSectionMain";
 import FeaturedSection from "@/components/shared/pageSection/homePageSection/FeaturedSection";
+import TechnologySection from "@/components/shared/pageSection/homePageSection/TechnologySection";
+import ClientSection from "@/components/shared/pageSection/homePageSection/ClientSection";
+import ContactUs from "@/components/shared/pageSection/homePageSection/ContactUs";
 
 export default function Home() {
   return (
@@ -12,6 +15,9 @@ export default function Home() {
       <ServicesSection />
       <ServiceSectionMain/>
       <FeaturedSection/>
+      <TechnologySection/>
+      <ClientSection/>
+      <ContactUs/>
     </div>
   );
 }
