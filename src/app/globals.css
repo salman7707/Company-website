@@ -125,6 +125,13 @@
   }
 }
 
+.text {
+    font-size: 70px;
+    font-weight: 500;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #4e54c8;
+}
+
 /* 0%{
   transform: translateX(0);
 }

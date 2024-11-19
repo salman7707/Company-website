@@ -62,7 +62,7 @@ export default function HeadingLarge({
       ? "lg:text-[40px]"
       : fontSize === "64"
       ? "lg:text-[64px]"
-      : "";
+      :  fontSize === "48" ? "lg:text-[48px]" : "";
   const weightClasses =
     weight === "bold"
       ? "font-bold"
@@ -82,7 +82,7 @@ export default function HeadingLarge({
       ? "text-white"
       : "text-secondary";
       const smallScreenFontClass = smallScreenFont === "36" ? "text-[36px]" : smallScreenFont === "30" ?  "text-[30px]":""
-      const mdScreenFontClass = mdScreenFont === "64" ? "md:text-[64px]" : ""
+      const mdScreenFontClass = mdScreenFont === "64" ? "md:text-[64px]" : mdScreenFont === "48" ? "md:text-[48px] " : ""
   return (
     <h1
       className={`${smallScreenFontClass} ${mdScreenFontClass} ${fontClass} ${ColorClasses} ${paddingTopClass} ${paddingBottomClass} ${textAlign} ${sizeClass} ${weightClasses} ${leadingClasses}`}

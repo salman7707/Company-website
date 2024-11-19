@@ -1,4 +1,4 @@
-import ServicesCard from "@/components/template/cards/ServicesCard";
+import ServicesCard from "@/components/template/cards/Card";
 import HeadingLarge from "@/components/template/headings/HeaderLarge";
 import HeadingMedium from "@/components/template/headings/HeaderMedium";
 import Paragraph from "@/components/template/headings/Paragraph";
@@ -33,32 +33,44 @@ export default function ServiceSectionMain() {
         <div className="py-14 grid lg:grid-cols-3 grid-cols-1 gap-x-8 gap-y-8">
           <ServicesCard
             img={IMAGES.NFT}
+            theme={"dark"}
+            btn={true}
             paragraph="We develop robust NFT marketplace platforms with multiple security layers."
             heading="NFT Development"
           />
           <ServicesCard
             img={IMAGES.AUDIT}
+            btn={true}
+            theme={"dark"}
             paragraph="Smart contract services provide secure execution of digital contracts on platforms"
             heading="Smart Contracts"
           />
           <ServicesCard
             img={IMAGES.CARDPIX}
+            btn={true}
+            theme={"dark"}
             paragraph="Financial services, such as lending, borrowing, and trading,"
             heading="Decentralized Finance"
           />
 
           <ServicesCard
             img={IMAGES.CARDPIX}
+            btn={true}
+            theme={"dark"}
             paragraph="Software application that operates on a decentralized network like ensuring secure"
             heading="Decentralized Apps"
           />
           <ServicesCard
             img={IMAGES.DEX}
+            theme={"dark"}
+            btn={true}
             paragraph="Users can trade cryptocurrencies directly with one another"
             heading="Decentralized Exchange"
           />
           <ServicesCard
             img={IMAGES.DOLL}
+            btn={true}
+            theme={"dark"}
             paragraph="Enabling users to store, manage, and trade various cryptocurrencies within platform."
             heading="Exchange & Wallet"
           />

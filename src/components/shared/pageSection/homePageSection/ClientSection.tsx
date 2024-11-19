@@ -33,7 +33,7 @@ export default function ClientSection() {
           Check out what our customers say about us.
         </Paragraph>
       </div>
-      <div className="w-[100%] flex items-center justify-center mx-auto py-14">
+      <div className="xl:w-[100%] lg:w-[95%] md:w-[90%] w-[95%] flex items-center justify-center mx-auto py-14">
         <Swiper
           spaceBetween={20}
           loop={true}
@@ -48,7 +48,7 @@ export default function ClientSection() {
           breakpoints={{
             320: {
               slidesPerView: 1,
-              spaceBetween: 20,
+              spaceBetween: 0,
             },
             640: {
               slidesPerView: 2,
@@ -68,7 +68,7 @@ export default function ClientSection() {
         >
           {Testimonial.map((data) => (
             <SwiperSlide key={data.id}>
-              <div className="flex flex-col px-6 py-4 items-start justify-center space-y-1 rounded-3xl bg-darkpurple xl:w-[370px] xl:h-[280px] lg:w-[310px] lg:h-[260px]">
+              <div className="flex flex-col px-6 py-4 items-start justify-center space-y-1 rounded-3xl bg-darkpurple xl:w-[370px] xl:h-[280px] lg:w-[310px] lg:h-[260px] md:w-[320px] md:h-[270px] w-[305px] h-[270px]">
                 <HeaderMedium
                   color="white"
                   fontSize="20"

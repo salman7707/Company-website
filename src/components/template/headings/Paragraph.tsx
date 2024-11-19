@@ -21,7 +21,7 @@ interface heading {
 export default function Paragraph({
   children,
   fontSize = "medium",
-  color = "var(--black)",
+  color,
   fontFamily = "font-manrope",
   weight,
   marginTop,
@@ -62,9 +62,17 @@ export default function Paragraph({
       : weight === "light"
       ? "font-light"
       : "font-semibold";
+      const ColorClasses =
+    color === "primary"
+      ? "text-primary"
+      : color === "black"
+      ? "text-black"
+      : color === "white"
+      ? "text-white"
+      : color === "gray" ? "text-gray" : "text-secondary";
   return (
     <p
-      className={` ${textAlign} ${fontClass} ${fontSizeClasses} mt-${marginTop} mb-${marginBottom} text-${color} ${weightClasses}`}
+      className={` ${textAlign} ${fontClass} ${fontSizeClasses} mt-${marginTop} mb-${marginBottom} ${ColorClasses} ${weightClasses}`}
     >
       {children}
     </p>
