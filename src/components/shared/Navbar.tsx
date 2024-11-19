@@ -35,7 +35,9 @@ export default function Navbar() {
               </div>
             </div>
           </div>
-          <div>Portfolio</div>
+          <div>
+            <Link href={"/portfolio"}>Portfolio</Link>
+          </div>
           <div className="flex justify-between items-center">
             Products
             <IoIosArrowDown />
@@ -80,9 +82,17 @@ export default function Navbar() {
             />
           </div>
           <div className="font-manrope text-black font-bold text-xl space-y-8 pt-4">
-            <div>Home</div>
-            <div>Services</div>
-            <div>Portfolio</div>
+            <div>
+              <Link href={"/"}>Home</Link>
+            </div>
+            <div>
+              <Link href={"/services"}>Services</Link>
+            </div>
+            <div>
+              {" "}
+              <Link href={"/portfolio"}>Portfolio
+              </Link>
+            </div>
             <div>Contact Us</div>
             <div>Blog</div>
             <div>Careers</div>

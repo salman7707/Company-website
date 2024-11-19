@@ -20,12 +20,13 @@ export default function OfferSection() {
             textAlign="text-center"
             fontSize="36"
             weight="medium"
+            smallScreenFont="36"
             fontFamily="font-custom"
           >
             Our Expertise
           </HeaderLarge>
         </div>
-        <div className="py-20 xl:px-0 px-10 w-[100%] grid lg:grid-cols-2 grid-cols-1 xl:gap-x-32 lg:gap-x-2 lg:gap-y-32 gap-y-4 items-center">
+        <div className="py-14 xl:px-0 px-10 w-full grid lg:grid-cols-2 grid-cols-1 xl:gap-x-32 lg:gap-x-36 lg:gap-y-14 gap-y-4 justify-content-between">
           {OurExpertise.map((data) => (
             <div
               key={data.id}
@@ -34,7 +35,7 @@ export default function OfferSection() {
               <div>
                 <h1 className="text font-custom text-white">{data.id}.</h1>
               </div>
-              <div className="px-3 py-3 space-y-6 xl:w-full lg:w-[70%] w-full h-auto">
+              <div className="px-3 py-3 space-y-6 xl:w-full lg:w-full  w-full h-auto">
                 <HeaderLarge
                   color="black"
                   fontSize="40"

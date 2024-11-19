@@ -32,6 +32,7 @@ export default {
         darkpurple: "var(--darkpurple)",
         gray: "var(--gray)",
         yellow: "var(--yellow)",
+        secondarygray: "var(--secondarygray)",
       },
     },
   },

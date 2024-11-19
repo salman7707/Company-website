@@ -4,8 +4,16 @@ interface Button {
   children: React.ReactNode;
   bgColor?: string;
   HandleClick?: () => void;
+  fontFamily?:
+  | "font-custom"
+  | "font-manrope"
+  | "Inter-regular"
+  | "Inter-medium"
+  | "Inter-bold"
+  | "Poppins-medium"
+  | "Poppins-regular";
   size?: "large" | "extralarge" | "small" | "extrasmall";
-  fontSize?: "large" | "medium" | "small";
+  fontSize?: "large" | "medium" | "small" | "extralarge";
   color?: string;
   rounded?: "full" | "medium" | "null" | "normal";
   border?: "black";
@@ -19,6 +27,7 @@ export default function Button({
   rounded = "full",
   bgColor,
   color,
+  fontFamily = "font-manrope",
   fontSize = "large",
   HandleClick,
   size,
@@ -33,7 +42,8 @@ export default function Button({
       : size === "extralarge"
       ? "px-6 py-3"
       : size === "extrasmall" ? "py-1 px-2" : "px-3 py-2";
-  const fontClasses = fontSize === "large" ? "text-xl font-medium" : "";
+  const fontClasses = fontSize === "large" ? "text-xl font-medium" : fontSize === "extralarge" ? 
+  "text-[24px] font-medium" : "";
   const BgColorClass =
     bgColor === "primary"
       ? "bg-primary"
@@ -54,6 +64,20 @@ export default function Button({
       : rounded === "normal"
       ? "rounded-lg"
       : "";
+      const fontClass =
+      fontFamily === "font-manrope"
+        ? "font-manrope"
+        : fontFamily === "Inter-regular"
+        ? "font-Inter"
+        : fontFamily === "Inter-medium"
+        ? "font-inter-medium"
+        : fontFamily === "Inter-bold"
+        ? "font-inter-bold"
+        : fontFamily === "Poppins-medium"
+        ? "font-poppins-medium"
+        : fontFamily === "font-custom"
+        ? "font-custom"
+        : "font-poppins";
   const borderClasses = border === "black" ? "border-2 border-black" : "";
   const hoverBgClass =
     hoverBg === "white"
@@ -73,7 +97,7 @@ export default function Button({
       : hoverText === "secondaryPurple" ? "text-secondaryPurple" : "";
   return (
     <button
-      className={`${ButtonSizes} ${borderClasses} ${hoverBgClass} ${hoverTextClass} ${BgColorClass} ${RoundedClass} ${className} ${ColorClass} ${fontClasses}`}
+      className={`${ButtonSizes} group ${fontClass} ${borderClasses} ${hoverBgClass} ${hoverTextClass} ${BgColorClass} ${RoundedClass} ${className} ${ColorClass} ${fontClasses}`}
       onClick={HandleClick}
     >
       {children}

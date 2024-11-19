@@ -7,21 +7,23 @@ import ChooseUs from "@/lib/ChooseUs";
 export default function ChooseSection() {
   return (
     <div className="w-full max-w-[1210px] mx-auto">
-      <div className="flex flex-col items-center justify-center space-y-2 py-20">
+      <div className="flex flex-col items-center justify-center px-4 space-y-2 pt-20 pb-10 w-full">
         <HeaderLarge
           color="black"
           fontSize="48"
+          smallScreenFont="36"
           fontFamily="font-custom"
           weight="medium"
+          textAlign="text-center"
         >
           Why Choose US ?
         </HeaderLarge>
-        <Paragraph fontSize="large" color="black">
+        <Paragraph fontSize="large" color="black" textAlign="text-center">
           We tend to provide the best services in order to build long term
           relationships with our clients
         </Paragraph>
       </div>
-      <div className="grid grid-cols-4 gap-6">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-6 md:gap-y-8 gap-y-6 lg:w-full md:w-[80%] mx-auto justify-items-center justify-center xl:px-0 lg:px-8 ">
         {ChooseUs.map((data) => (
           <div className="" key={data.id}>
             <SmallCard img={data.src} heading={data.heading} />

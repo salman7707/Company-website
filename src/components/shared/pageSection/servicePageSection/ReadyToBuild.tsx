@@ -8,19 +8,20 @@ import Button from "@/components/template/button/Button";
 export default function ReadyToBuild() {
   return (
     <div
-      className="bg-cover bg-center h-auto rounded-3xl w-full my-24 py-24 px-8 max-w-[1250px] mx-auto"
+      className="bg-cover bg-center h-auto rounded-3xl xl:w-full w-[95%] my-24 md:py-24 py-16 md:px-8 px-4 max-w-[1210px] mx-auto"
       style={{ backgroundImage: `url(${IMAGES.COVER})` }}
     >
-      <div className="w-[50%] space-y-4 rounded-2xl">
+      <div className="md:w-[50%] flex flex-col md:items-start items-center justify-center space-y-4 rounded-2xl">
         <HeaderLarge
           color="black"
           fontSize="48"
+          smallScreenFont="36"
           fontFamily="font-custom"
           weight="medium"
         >
           Ready to Build?
         </HeaderLarge>
-        <Paragraph color="black" fontSize="large">
+        <Paragraph color="black" fontSize="large" textAlign="md:text-left text-center">
           Book a free consult with our senior team. We’ll advise you on the best
           approach to achieve your vision.
         </Paragraph>

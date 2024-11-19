@@ -11,28 +11,75 @@ import React, { useState } from "react";
 import { IMAGES } from "../../../../../public/images";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaTelegram } from "react-icons/fa6";
+import { FaCalendarMinus } from "react-icons/fa6";
 
-export default function ContactUs() {
+interface data {
+  locationSec?: boolean;
+  headingSec?: boolean;
+  consultantSec?: boolean;
+}
+
+export default function ContactUs({
+  locationSec = true,
+  headingSec = true,
+  consultantSec = false,
+}: data) {
   const [location, setLocation] = useState(false);
   return (
-    <div className="relative z-10 w-full max-w-[1210px] mx-auto px-0 py-8 space-y-6">
-      <div className="xl:w-full w-[90%] mx-auto flex flex-col lg:items-start items-center justify-center">
-        <HeadingLarge
-          color="black"
-          smallScreenFont="36"
-          textAlign="text-center"
-          fontSize="40"
-        >
-          Contact Us
-        </HeadingLarge>
-        <Paragraph color="black" fontSize="large" textAlign="center">
-          Whether you have a technical questionor ready to start cooperation
-          <br />
-          NetixSol team remain committed to assist with your selection needs
-        </Paragraph>
-      </div>
-      <div className="flex lg:flex-row flex-col-reverse lg:space-y-0 xs:space-y-4 items-center justify-between xl:w-full lg:w-[90%] mx-auto">
-        <div className="space-y-4 lg:w-[56%] w-[90%] lg:pt-0 pt-8 ">
+    <div
+      className={`relative z-10 w-full ${
+        consultantSec === true ? "max-w-[1250px]" : "max-w-[1210px]"
+      }  mx-auto px-8 py-8 space-y-6 flex flex-col  justify-end `}
+    >
+      {/* Heading Section */}
+      {headingSec && (
+        <div className="lg:w-full w-[90%] mx-auto flex flex-col lg:items-start items-center justify-center">
+          <HeadingLarge
+            color="black"
+            smallScreenFont="36"
+            textAlign="text-center"
+            fontSize="40"
+          >
+            Contact Us
+          </HeadingLarge>
+          <Paragraph color="black" fontSize="large" textAlign="lg:text-left text-center ">
+            Whether you have a technical questionor ready to start cooperation
+            <br />
+            NetixSol team remain committed to assist with your selection needs
+          </Paragraph>
+        </div>
+      )}
+
+      <div className={`flex lg:flex-row ${ !consultantSec ? "flex-col-reverse" : "flex-col" }  lg:space-y-0 xs:space-y-4 items-start justify-between gap-x-3 xl:w-full lg:w-[100%] mx-auto`}>
+        {/* Consultant Section */}
+        {consultantSec && (
+          <div className="lg:w-[40%] md:w-[70%] w-full mx-auto bg-secondarygray h-auto rounded-3xl border px-5 py-8 space-y-4">
+            <HeadingLarge
+              color="black"
+              fontFamily="font-custom"
+              weight="medium"
+              smallScreenFont="36"
+            >
+              Book a Free Consultant
+            </HeadingLarge>
+            <Paragraph color="black" fontSize="medium">
+              Book a slot with our senior team to discuss your project and see
+              how we can apply our expertise to your idea.
+            </Paragraph>
+            <Button
+              color="white"
+              bgColor="primary"
+              className="w-full"
+              fontFamily="font-custom"
+            >
+              <div className="flex items-center justify-center space-x-2">
+                Schedule a Call <FaCalendarMinus />
+              </div>
+            </Button>
+          </div>
+        )}
+        {/* Form Section */}
+        <div className={`space-y-4 lg:w-[60%] md:w-[95%] mx-auto w-full lg:pt-0 pt-8 `}>
           <div className="w-full h-full">
             <form className=" bg-[#E7E8EA] grid gap-y-2 xs:grid-cols-1 md:grid-cols-2  justify-between items-center w-full h-full shadow-lg rounded-3xl px-6 py-6">
               <div className="space-y-1 w-[95%]">
@@ -235,105 +282,108 @@ export default function ContactUs() {
           </div>
         </div>
 
-        <div className="lg:w-[44%] md:w-[90%] xs:w-full md:px-8 px-4">
-          <div className="w-full space-y-4 flex flex-col">
-            <div className="w-full flex ">
-              <div
-                className="space-y-2 w-full cursor-pointer"
-                onClick={() => setLocation(true)}
-              >
-                <HeaderMedium
-                  weight="medium"
-                  fontFamily="font-manrope"
-                  fontSize="24"
-                  textAlign="center"
-                  color={location === true ? "black" : "gray"}
-                >
-                  Dubai
-                </HeaderMedium>
+        {/* Location Section */}
+        {locationSec && (
+          <div className="lg:w-[44%] md:w-[90%] mx-auto xs:w-full md:px-8 px-4">
+            <div className="w-full space-y-4 flex flex-col">
+              <div className="w-full flex ">
                 <div
-                  className={`border-b-[3px] ${
-                    location === true ? "border-b-black" : "border-b-gray"
-                  } `}
-                ></div>
-              </div>
-              <div
-                className="space-y-2 w-full cursor-pointer"
-                onClick={() => setLocation(false)}
-              >
-                <HeaderMedium
-                  weight="medium"
-                  fontFamily="font-manrope"
-                  fontSize="24"
-                  textAlign="center"
-                  color={location === false ? "black" : "gray"}
+                  className="space-y-2 w-full cursor-pointer"
+                  onClick={() => setLocation(true)}
                 >
-                  Pakistan
-                </HeaderMedium>
-                <div
-                  className={`border-b-[3px] ${
-                    location === false ? "border-b-black" : "border-b-gray"
-                  } `}
-                ></div>
-              </div>
-            </div>
-            <div className="bg-[#E7E8EA] w-full h-72 rounded-md">
-              <div className="flex md:flex-row flex-col space-x-2 items-center justify-center h-full">
-                <div className="w-[120px] h-[120px] border-[3px] bg-blue-300 border-black rounded-full overflow-hidden">
-                  <Image
-                    src={IMAGES.PERSONICON}
-                    width={120}
-                    height={120}
-                    alt="sir usman"
-                  />
-                </div>
-                <div className="flex flex-col md:items-start items-center space-y-2">
                   <HeaderMedium
+                    weight="medium"
+                    fontFamily="font-manrope"
                     fontSize="24"
-                    color="black"
-                    fontFamily="font-custom"
+                    textAlign="center"
+                    color={location === true ? "black" : "gray"}
+                  >
+                    Dubai
+                  </HeaderMedium>
+                  <div
+                    className={`border-b-[3px] ${
+                      location === true ? "border-b-black" : "border-b-gray"
+                    } `}
+                  ></div>
+                </div>
+                <div
+                  className="space-y-2 w-full cursor-pointer"
+                  onClick={() => setLocation(false)}
+                >
+                  <HeaderMedium
                     weight="medium"
-                  >
-                    Salman
-                  </HeaderMedium>
-                  <HeaderMedium
-                    fontSize="18"
-                    color="black"
-                    weight="medium"
                     fontFamily="font-manrope"
+                    fontSize="24"
+                    textAlign="center"
+                    color={location === false ? "black" : "gray"}
                   >
-                    CEO XYZ PVT.LTD 
+                    Pakistan
                   </HeaderMedium>
-                  <HeaderMedium
-                    fontSize="16"
-                    color="black"
-                    fontFamily="font-manrope"
-                    weight="normal"
-                  >
-                    Salman@xyz.com
-                  </HeaderMedium>
-                  <HeaderMedium
-                    fontSize="16"
-                    fontFamily="font-manrope"
-                    color="black"
-                    weight="normal"
-                  >
-                    {location === true
-                      ? "+971 00 00 00 111"
-                      : "+92 000 00 00 111"}
-                  </HeaderMedium>
+                  <div
+                    className={`border-b-[3px] ${
+                      location === false ? "border-b-black" : "border-b-gray"
+                    } `}
+                  ></div>
                 </div>
               </div>
-            </div>
-            <div className="flex items-center justify-center space-x-2">
-              <HeaderMedium color="black" fontSize="16" weight="normal">
-                We also use messengers
-              </HeaderMedium>
-              <IoLogoWhatsapp color="black" className="text-3xl" />
-              <FaTelegram color="black" className="text-2xl" />
+              <div className="bg-[#E7E8EA] w-full h-72 rounded-md">
+                <div className="flex md:flex-row flex-col space-x-2 items-center justify-center h-full">
+                  <div className="w-[120px] h-[120px] border-[3px] bg-blue-300 border-black rounded-full overflow-hidden">
+                    <Image
+                      src={IMAGES.PERSONICON}
+                      width={120}
+                      height={120}
+                      alt="sir usman"
+                    />
+                  </div>
+                  <div className="flex flex-col md:items-start items-center space-y-2">
+                    <HeaderMedium
+                      fontSize="24"
+                      color="black"
+                      fontFamily="font-custom"
+                      weight="medium"
+                    >
+                      Salman
+                    </HeaderMedium>
+                    <HeaderMedium
+                      fontSize="18"
+                      color="black"
+                      weight="medium"
+                      fontFamily="font-manrope"
+                    >
+                      CEO XYZ PVT.LTD
+                    </HeaderMedium>
+                    <HeaderMedium
+                      fontSize="16"
+                      color="black"
+                      fontFamily="font-manrope"
+                      weight="normal"
+                    >
+                      Salman@xyz.com
+                    </HeaderMedium>
+                    <HeaderMedium
+                      fontSize="16"
+                      fontFamily="font-manrope"
+                      color="black"
+                      weight="normal"
+                    >
+                      {location === true
+                        ? "+971 00 00 00 111"
+                        : "+92 000 00 00 111"}
+                    </HeaderMedium>
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center justify-center space-x-2">
+                <HeaderMedium color="black" fontSize="16" weight="normal">
+                  We also use messengers
+                </HeaderMedium>
+                <IoLogoWhatsapp color="black" className="text-3xl" />
+                <FaTelegram color="black" className="text-2xl" />
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
