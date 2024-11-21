@@ -1,3 +1,4 @@
+"use client"
 import HeroSection from "@/components/shared/pageSection/homePageSection/HeroSection";
 import OfferSection from "@/components/shared/pageSection/homePageSection/OfferSection";
 import ServicesSection from "@/components/shared/pageSection/homePageSection/ServicesSectionTop";
@@ -7,10 +8,12 @@ import TechnologySection from "@/components/shared/pageSection/homePageSection/T
 import ClientSection from "@/components/shared/pageSection/homePageSection/ClientSection";
 import ContactUs from "@/components/shared/pageSection/homePageSection/ContactUs";
 import { IMAGES } from "../../public/images";
+import { useMyContext } from "@/contexts/MyContexts";
 
 export default function Home() {
+  const {theme} = useMyContext();
   return (
-    <div className="bg-white overflow-hidden">
+    <div className={`${ theme === "light" ? "bg-white" : "bg-black" } overflow-hidden`}>
       <HeroSection
         img={IMAGES.HEROMAIN}
         imgH={450}

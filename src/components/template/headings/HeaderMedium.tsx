@@ -10,8 +10,8 @@ interface textpage {
     | "Inter-bold"
     | "Poppins-medium"
     | "Poppins-regular";
-  color?: "primary" | "secondary" | "white" | "gray" | "black";
-  fontSize?: "16" | "18" | "20" | "24" | "26";
+  color?: "primary" | "secondary" | "white" | "gray" | "black" | "medgray";
+  fontSize?: "16" | "18" | "20" | "24" | "26" | "28";
   textAlign?: "left" | "center" | "right";
   paddingTop?: string;
   paddingBottom?: string;
@@ -53,6 +53,8 @@ export default function HeadingMedium({
       ? "text-[26px]"
       : fontSize === "24"
       ? "text-[24px]"
+      : fontSize === "28"
+      ? "text-[28px]"
       : "text-xl";
   const weightClasses =
     weight === "bold"
@@ -77,6 +79,8 @@ export default function HeadingMedium({
       ? "text-gray"
       : color === "black"
       ? "text-black"
+      : color === "medgray"
+      ? "text-medGray"
       : "text-secondary";
   return (
     <h1

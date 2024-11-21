@@ -16,6 +16,9 @@ export default {
       "2xl":"1536px"
     },
     extend: {
+      boxShadow: {
+        'custom-shadow': 'rgba(0, 0, 0, 0.35) 0px 1px 10px',
+      },
       fontFamily:{
         custom:["MyCustomFont","sans-serif"]
       },
@@ -33,6 +36,9 @@ export default {
         gray: "var(--gray)",
         yellow: "var(--yellow)",
         secondarygray: "var(--secondarygray)",
+        lightgray: "var(--lightgray)",
+        lightblack: "var(--lightblack)",
+        medGray: "var(--medGray)",
       },
     },
   },

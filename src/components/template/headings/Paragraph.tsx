@@ -2,7 +2,7 @@ import React from "react";
 
 interface heading {
   children: React.ReactNode;
-  fontSize?: "extrasmall" | "small" | "medium" | "large" | "extralarge";
+  fontSize?: "extrasmall" | "small" | "medium" | "large" | "extralarge" | "24";
   color?: string;
   fontFamily?:
     | "font-custom"
@@ -37,6 +37,8 @@ export default function Paragraph({
       ? "text-base"
       : fontSize === "large"
       ? "text-lg"
+      : fontSize === "24"
+      ? "text-[24px]"
       : "text-xl";
   const fontClass =
     fontFamily === "font-manrope"
@@ -62,14 +64,16 @@ export default function Paragraph({
       : weight === "light"
       ? "font-light"
       : "font-semibold";
-      const ColorClasses =
+  const ColorClasses =
     color === "primary"
       ? "text-primary"
       : color === "black"
       ? "text-black"
       : color === "white"
       ? "text-white"
-      : color === "gray" ? "text-gray" : "text-secondary";
+      : color === "gray"
+      ? "text-gray"
+      : "text-secondary";
   return (
     <p
       className={` ${textAlign} ${fontClass} ${fontSizeClasses} mt-${marginTop} mb-${marginBottom} ${ColorClasses} ${weightClasses}`}

@@ -12,6 +12,7 @@ import { IMAGES } from "../../../../../public/images";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaTelegram } from "react-icons/fa6";
 import { FaCalendarMinus } from "react-icons/fa6";
+import { useMyContext } from "@/contexts/MyContexts";
 
 interface data {
   locationSec?: boolean;
@@ -25,6 +26,7 @@ export default function ContactUs({
   consultantSec = false,
 }: data) {
   const [location, setLocation] = useState(false);
+  const { theme } = useMyContext();
   return (
     <div
       className={`relative z-10 w-full ${
@@ -35,14 +37,18 @@ export default function ContactUs({
       {headingSec && (
         <div className="lg:w-full w-[90%] mx-auto flex flex-col lg:items-start items-center justify-center">
           <HeadingLarge
-            color="black"
+            color={theme === "light" ? "black" : "white"}
             smallScreenFont="36"
             textAlign="text-center"
             fontSize="40"
           >
             Contact Us
           </HeadingLarge>
-          <Paragraph color="black" fontSize="large" textAlign="lg:text-left text-center ">
+          <Paragraph
+            color={theme === "light" ? "black" : "white"}
+            fontSize="large"
+            textAlign="lg:text-left text-center "
+          >
             Whether you have a technical questionor ready to start cooperation
             <br />
             NetixSol team remain committed to assist with your selection needs
@@ -50,19 +56,29 @@ export default function ContactUs({
         </div>
       )}
 
-      <div className={`flex lg:flex-row ${ !consultantSec ? "flex-col-reverse" : "flex-col" }  lg:space-y-0 xs:space-y-4 items-start justify-between gap-x-3 xl:w-full lg:w-[100%] mx-auto`}>
+      <div
+        className={`flex lg:flex-row ${
+          !consultantSec ? "flex-col-reverse" : "flex-col"
+        }  lg:space-y-0 xs:space-y-4 items-start justify-between gap-x-3 xl:w-full lg:w-[100%] mx-auto`}
+      >
         {/* Consultant Section */}
         {consultantSec && (
-          <div className="lg:w-[40%] md:w-[70%] w-full mx-auto bg-secondarygray h-auto rounded-3xl border px-5 py-8 space-y-4">
+          <div
+            className={`${
+              theme === "light"
+                ? "bg-secondarygray"
+                : "bg-lightblack border border-gray"
+            } lg:w-[40%] md:w-[70%] w-full mx-auto h-auto rounded-3xl border px-5 py-8 space-y-4`}
+          >
             <HeadingLarge
-              color="black"
+              color={ theme === "light" ? "black" : "white"}
               fontFamily="font-custom"
               weight="medium"
               smallScreenFont="36"
             >
               Book a Free Consultant
             </HeadingLarge>
-            <Paragraph color="black" fontSize="medium">
+            <Paragraph color={ theme === "light" ? "black" : "white"} fontSize="medium">
               Book a slot with our senior team to discuss your project and see
               how we can apply our expertise to your idea.
             </Paragraph>
@@ -79,15 +95,23 @@ export default function ContactUs({
           </div>
         )}
         {/* Form Section */}
-        <div className={`space-y-4 lg:w-[60%] md:w-[95%] mx-auto w-full lg:pt-0 pt-8 `}>
+        <div
+          className={`space-y-4 lg:w-[60%] md:w-[95%] mx-auto w-full lg:pt-0 pt-8 `}
+        >
           <div className="w-full h-full">
-            <form className=" bg-[#E7E8EA] grid gap-y-2 xs:grid-cols-1 md:grid-cols-2  justify-between items-center w-full h-full shadow-lg rounded-3xl px-6 py-6">
+            <form
+              className={` ${
+                theme === "light"
+                  ? "bg-secondarygray"
+                  : "bg-lightblack border border-gray"
+              } grid gap-y-2 xs:grid-cols-1 md:grid-cols-2  justify-between items-center w-full h-full shadow-lg rounded-3xl px-6 py-6`}
+            >
               <div className="space-y-1 w-[95%]">
                 <Label
                   fontSize="medium"
                   fontFamily="font-manrope"
                   weight="medium"
-                  color="black"
+                  color={theme === "light" ? "black" : "white"}
                 >
                   Full Name
                 </Label>
@@ -102,7 +126,7 @@ export default function ContactUs({
                   fontSize="medium"
                   fontFamily="font-manrope"
                   weight="medium"
-                  color="black"
+                  color={theme === "light" ? "black" : "white"}
                 >
                   Email
                 </Label>
@@ -114,7 +138,7 @@ export default function ContactUs({
                   fontSize="medium"
                   fontFamily="font-manrope"
                   weight="medium"
-                  color="black"
+                  color={theme === "light" ? "black" : "white"}
                 >
                   Company name
                 </Label>
@@ -129,7 +153,7 @@ export default function ContactUs({
                   fontSize="medium"
                   fontFamily="font-manrope"
                   weight="medium"
-                  color="black"
+                  color={theme === "light" ? "black" : "white"}
                 >
                   Phone number (optional)
                 </Label>
@@ -145,7 +169,7 @@ export default function ContactUs({
                   fontSize="18"
                   fontFamily="font-manrope"
                   weight="medium"
-                  color="black"
+                  color={theme === "light" ? "black" : "white"}
                 >
                   What communication channel do you prefer?
                 </HeaderMedium>
@@ -155,7 +179,9 @@ export default function ContactUs({
                     width=""
                     placeholder="Enter your mobile number"
                   />
-                  <Label color="black">Email</Label>
+                  <Label color={theme === "light" ? "black" : "white"}>
+                    Email
+                  </Label>
                 </div>
                 <div className="space-x-2 pt-2">
                   <Input
@@ -163,7 +189,9 @@ export default function ContactUs({
                     width=""
                     placeholder="Enter your mobile number"
                   />
-                  <Label color="black">PhoneCall</Label>
+                  <Label color={theme === "light" ? "black" : "white"}>
+                    PhoneCall
+                  </Label>
                 </div>
                 <div className="space-x-2 pt-2">
                   <Input
@@ -171,7 +199,9 @@ export default function ContactUs({
                     width=""
                     placeholder="Enter your mobile number"
                   />
-                  <Label color="black">Whatsapp</Label>
+                  <Label color={theme === "light" ? "black" : "white"}>
+                    Whatsapp
+                  </Label>
                 </div>
                 <div className="space-x-2 pt-2">
                   <Input
@@ -179,7 +209,9 @@ export default function ContactUs({
                     width=""
                     placeholder="Enter your mobile number"
                   />
-                  <Label color="black">Telegram</Label>
+                  <Label color={theme === "light" ? "black" : "white"}>
+                    Telegram
+                  </Label>
                 </div>
                 <div className="py-4">
                   <Button bgColor="primary" className="w-full" rounded="full">
@@ -189,7 +221,7 @@ export default function ContactUs({
               </div>
               <div className=" xs:hidden md:flex flex-col pt-1 justify-start">
                 <Label
-                  color="black"
+                  color={theme === "light" ? "black" : "white"}
                   weight="medium"
                   fontFamily="font-manrope"
                   fontSize="medium"
@@ -201,7 +233,10 @@ export default function ContactUs({
                   placeholder="Tell us your project and request"
                 />
                 <div className="py-2">
-                  <Paragraph color="black" fontSize="extrasmall">
+                  <Paragraph
+                    color={theme === "light" ? "black" : "white"}
+                    fontSize="extrasmall"
+                  >
                     By clicking this button you agree to share your data with
                     NetixSol. Information will be used for communication
                     purposes only.
@@ -214,7 +249,7 @@ export default function ContactUs({
                     fontSize="18"
                     fontFamily="font-manrope"
                     weight="medium"
-                    color="black"
+                    color={theme === "light" ? "black" : "white"}
                   >
                     What communication channel do you prefer?
                   </HeaderMedium>
@@ -224,7 +259,9 @@ export default function ContactUs({
                       width=""
                       placeholder="Enter your mobile number"
                     />
-                    <Label color="black">Email</Label>
+                    <Label color={theme === "light" ? "black" : "white"}>
+                      Email
+                    </Label>
                   </div>
                   <div className="space-x-2 pt-2">
                     <Input
@@ -232,7 +269,9 @@ export default function ContactUs({
                       width=""
                       placeholder="Enter your mobile number"
                     />
-                    <Label color="black">PhoneCall</Label>
+                    <Label color={theme === "light" ? "black" : "white"}>
+                      PhoneCall
+                    </Label>
                   </div>
                   <div className="space-x-2 pt-2">
                     <Input
@@ -240,7 +279,9 @@ export default function ContactUs({
                       width=""
                       placeholder="Enter your mobile number"
                     />
-                    <Label color="black">Whatsapp</Label>
+                    <Label color={theme === "light" ? "black" : "white"}>
+                      Whatsapp
+                    </Label>
                   </div>
                   <div className="space-x-2 pt-2">
                     <Input
@@ -248,7 +289,9 @@ export default function ContactUs({
                       width=""
                       placeholder="Enter your mobile number"
                     />
-                    <Label color="black">Telegram</Label>
+                    <Label color={theme === "light" ? "black" : "white"}>
+                      Telegram
+                    </Label>
                   </div>
                   <div className="py-4">
                     <Button bgColor="primary" className="w-full" rounded="full">
@@ -258,7 +301,7 @@ export default function ContactUs({
                 </div>
                 <div className="flex flex-col pt-1 justify-start">
                   <Label
-                    color="black"
+                    color={theme === "light" ? "black" : "white"}
                     weight="medium"
                     fontFamily="font-manrope"
                     fontSize="medium"
@@ -270,7 +313,10 @@ export default function ContactUs({
                     placeholder="Tell us your project and request"
                   />
                   <div className="py-2">
-                    <Paragraph color="black" fontSize="extrasmall">
+                    <Paragraph
+                      color={theme === "light" ? "black" : "white"}
+                      fontSize="extrasmall"
+                    >
                       By clicking this button you agree to share your data with
                       NetixSol. Information will be used for communication
                       purposes only.
@@ -296,13 +342,23 @@ export default function ContactUs({
                     fontFamily="font-manrope"
                     fontSize="24"
                     textAlign="center"
-                    color={location === true ? "black" : "gray"}
+                    color={
+                      location === true
+                        ? theme === "light"
+                          ? "black"
+                          : "white"
+                        : "gray"
+                    }
                   >
                     Dubai
                   </HeaderMedium>
                   <div
                     className={`border-b-[3px] ${
-                      location === true ? "border-b-black" : "border-b-gray"
+                      location === true
+                        ? theme === "light"
+                          ? "border-b-black"
+                          : "border-b-white"
+                        : "border-b-gray"
                     } `}
                   ></div>
                 </div>
@@ -315,18 +371,32 @@ export default function ContactUs({
                     fontFamily="font-manrope"
                     fontSize="24"
                     textAlign="center"
-                    color={location === false ? "black" : "gray"}
+                    color={
+                      location === false
+                        ? theme === "light"
+                          ? "black"
+                          : "white"
+                        : "gray"
+                    }
                   >
                     Pakistan
                   </HeaderMedium>
                   <div
                     className={`border-b-[3px] ${
-                      location === false ? "border-b-black" : "border-b-gray"
+                      location === false
+                        ? theme === "light"
+                          ? "border-b-black"
+                          : "border-b-white"
+                        : "border-b-gray"
                     } `}
                   ></div>
                 </div>
               </div>
-              <div className="bg-[#E7E8EA] w-full h-72 rounded-md">
+              <div
+                className={`${
+                  theme === "light" ? "bg-secondarygray" : "bg-medGray"
+                } w-full h-72 rounded-md`}
+              >
                 <div className="flex md:flex-row flex-col space-x-2 items-center justify-center h-full">
                   <div className="w-[120px] h-[120px] border-[3px] bg-blue-300 border-black rounded-full overflow-hidden">
                     <Image
@@ -339,7 +409,7 @@ export default function ContactUs({
                   <div className="flex flex-col md:items-start items-center space-y-2">
                     <HeaderMedium
                       fontSize="24"
-                      color="black"
+                      color={theme === "light" ? "black" : "white"}
                       fontFamily="font-custom"
                       weight="medium"
                     >
@@ -347,7 +417,7 @@ export default function ContactUs({
                     </HeaderMedium>
                     <HeaderMedium
                       fontSize="18"
-                      color="black"
+                      color={theme === "light" ? "black" : "white"}
                       weight="medium"
                       fontFamily="font-manrope"
                     >
@@ -355,7 +425,7 @@ export default function ContactUs({
                     </HeaderMedium>
                     <HeaderMedium
                       fontSize="16"
-                      color="black"
+                      color={theme === "light" ? "black" : "white"}
                       fontFamily="font-manrope"
                       weight="normal"
                     >
@@ -364,7 +434,7 @@ export default function ContactUs({
                     <HeaderMedium
                       fontSize="16"
                       fontFamily="font-manrope"
-                      color="black"
+                      color={theme === "light" ? "black" : "white"}
                       weight="normal"
                     >
                       {location === true
@@ -375,11 +445,21 @@ export default function ContactUs({
                 </div>
               </div>
               <div className="flex items-center justify-center space-x-2">
-                <HeaderMedium color="black" fontSize="16" weight="normal">
+                <HeaderMedium
+                  color={theme === "light" ? "black" : "white"}
+                  fontSize="16"
+                  weight="normal"
+                >
                   We also use messengers
                 </HeaderMedium>
-                <IoLogoWhatsapp color="black" className="text-3xl" />
-                <FaTelegram color="black" className="text-2xl" />
+                <IoLogoWhatsapp
+                  color={theme === "light" ? "black" : "white"}
+                  className="text-3xl"
+                />
+                <FaTelegram
+                  color={theme === "light" ? "black" : "white"}
+                  className="text-2xl"
+                />
               </div>
             </div>
           </div>

@@ -10,13 +10,15 @@ import React from "react";
 // import { Autoplay, Pagination, Navigation } from "swiper/modules";
 // import Image from "next/image";
 import { IMAGES } from "../../../../../public/images";
+import { useMyContext } from "@/contexts/MyContexts";
 
 export default function FeaturedSection() {
+  const { theme } = useMyContext();
   return (
     <div className="flex flex-col items-center justify-between py-20 w-full max-w-[1210px] mx-auto">
       <div className="flex px-4 flex-col items-center justify-center space-y-3">
         <Paragraph
-          color="black"
+          color={theme === "light" ? "black" : "white"}
           textAlign="text-center"
           fontSize="large"
           fontFamily="font-custom"
@@ -26,7 +28,7 @@ export default function FeaturedSection() {
         </Paragraph>
         <HeadingLarge
           fontFamily="font-custom"
-          color="black"
+          color={theme === "light" ? "black" : "white"}
           fontSize="64"
           textAlign="text-center"
           smallScreenFont="36"
@@ -35,7 +37,7 @@ export default function FeaturedSection() {
           We partner with web3 companies
         </HeadingLarge>
         <Paragraph
-          color="black"
+          color={theme === "light" ? "black" : "white"}
           fontSize="extralarge"
           fontFamily="font-custom"
           weight="medium"
@@ -50,7 +52,11 @@ export default function FeaturedSection() {
       <div className="whitespace-nowrap inline-block pt-20 overflow-hidden xl:w-[100%] md:w-[200%] xs:w-[350%]">
         <div className="scroll inline-block space-x-2">
           <div className="inline-block align-middle w-auto h-auto whitespace-nowrap">
-            <img src={IMAGES.ALPHA} alt="alpha" className="" />
+            <img
+              src={theme === "light" ? IMAGES.ALPHA : IMAGES.ALPHAW}
+              alt="alpha"
+              className=""
+            />
           </div>
           <div className="inline-block align-middle w-auto h-auto whitespace-nowrap">
             <img src={IMAGES.SW} alt="alpha" />
@@ -70,7 +76,10 @@ export default function FeaturedSection() {
         </div>
         <div className="scroll inline-block  space-x-2">
           <div className="inline-block align-middle w-auto h-auto whitespace-nowrap">
-            <img src={IMAGES.ALPHA} alt="alpha" />
+            <img
+              src={theme === "light" ? IMAGES.ALPHA : IMAGES.ALPHAW}
+              alt="alpha"
+            />
           </div>
           <div className="inline-block align-middle w-auto h-auto whitespace-nowrap">
             <img src={IMAGES.SW} alt="alpha" />

@@ -1,3 +1,4 @@
+"use Client";
 import Image from "next/image";
 import React from "react";
 import { IMAGES } from "../../../../../public/images";
@@ -5,24 +6,37 @@ import HeadingMedium from "@/components/template/headings/HeaderMedium";
 import HeadingLarge from "@/components/template/headings/HeaderLarge";
 import Paragraph from "@/components/template/headings/Paragraph";
 import Button from "@/components/template/button/Button";
+import { useMyContext } from "@/contexts/MyContexts";
 
 export default function OfferSection() {
+  const { theme } = useMyContext();
   return (
     <div className="xl:w-full lg:w-[90%] w-[96%] z-10 relative max-w-[1210px] py-28 mx-auto lg:space-y-0 space-y-3 flex lg:flex-row xs:flex-col xl:items-end items-center justify-center lg:space-x-3">
       <div className="w-full flex items-center">
         <Image src={IMAGES.OFFER} alt="Offer" width={578} height={518} />
       </div>
       <div className="w-full space-y-5 flex flex-col items-start justify-between">
-        <HeadingMedium fontSize="20" weight="medium" color="secondary">
+        <HeadingMedium
+          fontSize="20"
+          weight="medium"
+          color={theme === "light" ? "secondary" : "primary"}
+        >
           WHAT WE OFFER
         </HeadingMedium>
-        <HeadingLarge fontSize="40" color="black" leading="custom" fontFamily="font-custom" weight="medium" smallScreenFont="30">
+        <HeadingLarge
+          fontSize="40"
+          color={theme === "light" ? "black" : "white"}
+          leading="custom"
+          fontFamily="font-custom"
+          weight="medium"
+          smallScreenFont="30"
+        >
           End-to-End Blockchain development that makes sense
         </HeadingLarge>
         <Paragraph
           fontSize="large"
           fontFamily="font-manrope"
-          color="black"
+          color={theme === "light" ? "black" : "white"}
           weight="normal"
         >
           From whiteboard to market, we assist mid-sized enterprises and funded
@@ -35,37 +49,37 @@ export default function OfferSection() {
           <div className="flex xl:flex-row xs:flex-col justify-start xl:space-x-4 space-x-0 xl:space-y-0 space-y-4">
             <div className="flex space-x-4 justify-start">
               <Button
-                bgColor="black"
-                color="white"
-                border="black"
-                hoverBg="white"
-                hoverText="black"
+                bgColor={theme === "light" ? "black" : "white"}
+                color={theme === "light" ? "white" : "black"}
+                border={theme === "light" ? "black" : "white"}
+                hoverBg={theme === "light" ? "white" : "black"}
+                hoverText={theme === "light" ? "black" : "white"}
                 rounded="normal"
                 size="large"
               >
                 Dapp
               </Button>
               <Button
-                bgColor="black"
-                color="white"
-                border="black"
-                rounded="normal"
+                bgColor={theme === "light" ? "black" : "white"}
+                color={theme === "light" ? "white" : "black"}
+                border={theme === "light" ? "black" : "white"}
+                hoverBg={theme === "light" ? "white" : "black"}
+                hoverText={theme === "light" ? "black" : "white"}
                 size="extralarge"
-                hoverBg="white"
-                hoverText="black"
+                rounded="normal"
               >
                 DEX Development
               </Button>
             </div>
             <div>
               <Button
-                bgColor="black"
-                border="black"
-                color="white"
-                rounded="normal"
+                bgColor={theme === "light" ? "black" : "white"}
+                color={theme === "light" ? "white" : "black"}
+                border={theme === "light" ? "black" : "white"}
+                hoverBg={theme === "light" ? "white" : "black"}
+                hoverText={theme === "light" ? "black" : "white"}
                 size="extralarge"
-                hoverBg="white"
-                hoverText="black"
+                rounded="normal"
               >
                 DEFI Development
               </Button>
@@ -73,47 +87,47 @@ export default function OfferSection() {
           </div>
           <div className="flex justify-start space-x-4">
             <Button
-              bgColor="black"
-              color="white"
-              border="black"
+              bgColor={theme === "light" ? "black" : "white"}
+              color={theme === "light" ? "white" : "black"}
+              border={theme === "light" ? "black" : "white"}
+              hoverBg={theme === "light" ? "white" : "black"}
+              hoverText={theme === "light" ? "black" : "white"}
               rounded="normal"
               size="extralarge"
-              hoverBg="white"
-              hoverText="black"
             >
               Tokenization
             </Button>
             <Button
-              bgColor="black"
-              border="black"
-              color="white"
-              rounded="normal"
+              bgColor={theme === "light" ? "black" : "white"}
+              color={theme === "light" ? "white" : "black"}
+              border={theme === "light" ? "black" : "white"}
+              hoverBg={theme === "light" ? "white" : "black"}
+              hoverText={theme === "light" ? "black" : "white"}
               size="extralarge"
-              hoverBg="white"
-              hoverText="black"
+              rounded="normal"
             >
               Staking & Farming
             </Button>
           </div>
           <div className="flex justify-start space-x-4">
             <Button
-              bgColor="black"
-              color="white"
-              border="black"
+              bgColor={theme === "light" ? "black" : "white"}
+              color={theme === "light" ? "white" : "black"}
+              border={theme === "light" ? "black" : "white"}
+              hoverBg={theme === "light" ? "white" : "black"}
+              hoverText={theme === "light" ? "black" : "white"}
               rounded="normal"
               size="extralarge"
-              hoverBg="white"
-              hoverText="black"
             >
               NFT Development
             </Button>
             <Button
-              bgColor="black"
-              color="white"
+              bgColor={ theme === "light" ? "black": "white" }
+              color={ theme === "light" ? "white": "black" }
+              border={ theme === "light" ? "black": "white" } 
+              hoverBg={ theme === "light" ? "white" : "black" }
+              hoverText={ theme === "light" ? "black" : "white" }
               rounded="normal"
-              border="black"
-              hoverBg="white"
-              hoverText="black"
               size="extralarge"
             >
               Smart Contract

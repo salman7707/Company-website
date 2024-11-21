@@ -1,13 +1,16 @@
+"use client"
 import HeroSection from "@/components/shared/pageSection/homePageSection/HeroSection";
 import { IMAGES } from "../../../public/images";
 import OfferSection from "@/components/shared/pageSection/servicePageSection/OfferSection";
 import FocusSection from "@/components/shared/pageSection/servicePageSection/FocusSection";
 import ChooseSection from "@/components/shared/pageSection/servicePageSection/ChooseSection";
 import ReadyToBuild from "@/components/shared/pageSection/servicePageSection/ReadyToBuild";
+import { useMyContext } from "@/contexts/MyContexts";
 
 export default function page() {
+  const {theme} = useMyContext();
   return (
-    <div>
+    <div className={` ${ theme === "light" ? "bg-white" : "bg-black" } `}>
       <HeroSection
         img={IMAGES.SERHERO}
         imgH={350}

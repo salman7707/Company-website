@@ -1,5 +1,6 @@
 export const IMAGES = {
     LOGO:"/images/icons/logo.svg",
+    LOGOW:"/images/sideImage/Netixsol_Logo 1.svg",
     BGHERO:"/images/sideImage/herobg.png",
     HEROMAIN:"/images/sideImage/heromain.svg",
     OFFER:"/images/sideImage/offerpix.png",
@@ -13,6 +14,7 @@ export const IMAGES = {
     DOLL:"/images/sideImage/doll.svg",
     CLOUD:"/images/icons/cloud.svg",
     ALPHA:"/images/sideImage/alphhadex.png",
+    ALPHAW:"/images/sideImage/alphhadex.webp",
     AZHA:"/images/sideImage/azha.webp",
     BANNER:"/images/sideImage/banner.png",
     DEFI:"/images/sideImage/defi dino.png",
@@ -52,7 +54,7 @@ export const IMAGES = {
     UNISWAP:"/images/icons/uniswapwebp.webp",
     PERSONICON:"/images/icons/man-person-icon.webp",
     FLOGO:"/images/icons/footer log.webp",
-    FBG:"/images/sideImage/footerbg.webp",
+    FBG:"/images/sideImage/footerbg.jpg",
     SERHERO:"/images/sideImage/ser.svg",
     SERBG:"/images/sideImage/servicemainbg.webp",
     ED:"/images/sideImage/ed.svg",
@@ -86,4 +88,9 @@ export const IMAGES = {
     D:"/images/sideImage/d.svg",
     E:"/images/sideImage/e.svg",
     F:"/images/sideImage/f.svg",
+    APPLY:"/images/icons/apply.png",
+    FIRSTSEC:"/images/icons/firstsec.svg",
+    SECONDSEC:"/images/icons/secondsec.svg",
+    THIRDSEC:"/images/icons/thirdsec.svg",
+    ARROW:"/images/icons/arrow.png",
 }

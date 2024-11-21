@@ -1,12 +1,15 @@
+"use client"
 import HeroSection from "@/components/shared/pageSection/homePageSection/HeroSection";
 import React from "react";
 import { IMAGES } from "../../../public/images";
 import ProjectSection from "@/components/shared/pageSection/portfolioPageSection/ProjectSection";
 import ReadyToBuild from "@/components/shared/pageSection/servicePageSection/ReadyToBuild";
+import { useMyContext } from "@/contexts/MyContexts";
 
 export default function page() {
+  const {theme} = useMyContext();
   return (
-    <div>
+    <div className={` ${ theme === "light" ? "bg-white" : "bg-black"} `}>
       <HeroSection
         img={IMAGES.PORTIMG}
         imgH={250}

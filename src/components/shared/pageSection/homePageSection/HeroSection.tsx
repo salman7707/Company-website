@@ -5,6 +5,7 @@ import Image from "next/image";
 import Button from "@/components/template/button/Button";
 import Paragraph from "@/components/template/headings/Paragraph";
 import { IMAGES } from "../../../../../public/images";
+import { useMyContext } from "@/contexts/MyContexts";
 
 interface HeroData {
   imgH?: number;
@@ -29,6 +30,7 @@ export default function HeroSection({
   bgImg,
   imgSecondPortf,
 }: HeroData) {
+  const {theme} = useMyContext();
   return (
     <div
       className={`${
@@ -42,7 +44,7 @@ export default function HeroSection({
             smallScreenFont="36"
             mdScreenFont="64"
             fontFamily="font-custom"
-            color="black"
+            color={ theme === "light" ? "black": "white" }
             weight="medium"
             leading="custom"
             textAlign="lg:text-left text-center"
@@ -53,7 +55,7 @@ export default function HeroSection({
           <Paragraph
             fontSize="large"
             fontFamily="font-manrope"
-            color="black"
+            color={ theme === "light" ? "black": "white" }
             weight="normal"
             textAlign="lg:text-left xs:text-center"
           >
@@ -108,7 +110,7 @@ export default function HeroSection({
         }}
         className={`absolute bg-center bg-no-repeat ${
           bgImg === IMAGES.PORTBG ? "-top-28 bg-right-top" : "top-10"
-        } z-0 h-[933px] bg-white w-full`}
+        } z-0 h-[933px] w-full`}
       ></div>
     </div>
   );

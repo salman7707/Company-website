@@ -1,3 +1,4 @@
+"use client";
 import Button from "@/components/template/button/Button";
 import List from "@/components/template/form/list/list";
 import HeaderLarge from "@/components/template/headings/HeaderLarge";
@@ -6,6 +7,7 @@ import Image from "next/image";
 import React from "react";
 import { GoArrowRight } from "react-icons/go";
 import { IMAGES } from "../../../../../public/images";
+import { useMyContext } from "@/contexts/MyContexts";
 
 interface ProjectSection {
   flow?: boolean;
@@ -28,16 +30,19 @@ export default function ProjectSection({
   list4,
   img,
 }: ProjectSection) {
+  const { theme } = useMyContext();
   return (
     <div className="w-full max-w-[1210px] mx-auto lg:pt-28 pt-10 relative">
       <div
         className={`flex  ${
-          flow === true ? "lg:flex-row-reverse flex-col-reverse" : "lg:flex-row flex-col-reverse"
+          flow === true
+            ? "lg:flex-row-reverse flex-col-reverse"
+            : "lg:flex-row flex-col-reverse"
         } flex-row xl:px-0 lg:px-6 items-center xl:justify-between justify-center mx-auto md:w-[60%]  lg:w-full w-[94%]`}
       >
         <div className="w-full space-y-5 xl:p-0 lg:p-6 pt-4">
           <HeaderLarge
-            color="black"
+            color={theme === "light" ? "black" : "white"}
             fontSize="36"
             fontFamily="font-custom"
             weight="medium"
@@ -46,12 +51,16 @@ export default function ProjectSection({
           >
             {heading}
           </HeaderLarge>
-          <Paragraph color="black" fontSize="large" weight="medium">
+          <Paragraph
+            color={theme === "light" ? "black" : "white"}
+            fontSize="large"
+            weight="medium"
+          >
             {paragraph}
           </Paragraph>
           <div className="space-y-1">
             <List
-              color="black"
+              color={theme === "light" ? "black" : "white"}
               fontSize="medium"
               fontFamily="font-custom"
               weight="medium"
@@ -59,7 +68,7 @@ export default function ProjectSection({
               {list1}
             </List>
             <List
-              color="black"
+              color={theme === "light"? "black" : "white"}
               fontSize="medium"
               fontFamily="font-custom"
               weight="medium"
@@ -67,7 +76,7 @@ export default function ProjectSection({
               {list2}
             </List>
             <List
-              color="black"
+              color={theme === "light"? "black" : "white"}
               fontSize="medium"
               fontFamily="font-custom"
               weight="medium"
@@ -75,7 +84,7 @@ export default function ProjectSection({
               {list3}
             </List>
             <List
-              color="black"
+              color={theme === "light"? "black" : "white"}
               fontSize="medium"
               fontFamily="font-custom"
               weight="medium"
@@ -91,8 +100,10 @@ export default function ProjectSection({
               rounded="null"
               className="border-b-2 border-primary"
             >
-              View Case Study{" "}
-              <GoArrowRight className="text-primary text-3xl group-hover:pl-2 font-bold  " />
+              <div className="flex items-center justify-center">
+                View Case Study
+                <GoArrowRight className="text-primary text-3xl group-hover:pl-2 font-bold  " />
+              </div>
             </Button>
           </div>
         </div>

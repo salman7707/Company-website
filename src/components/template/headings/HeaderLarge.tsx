@@ -19,12 +19,13 @@ interface textpage {
   mdScreenFont?:string;
   weight?: "bold" | "semibold" | "medium" | "normal";
   leading?: "custom";
+  theme?:"light"| "dark";
 }
 
 export default function HeadingLarge({
   children,
   fontFamily = "font-manrope",
-  color = "primary",
+  color = "white",
   fontSize = "35",
   textAlign,
   paddingTop,

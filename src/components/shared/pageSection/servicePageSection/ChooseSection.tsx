@@ -3,13 +3,15 @@ import HeaderLarge from "@/components/template/headings/HeaderLarge";
 import Paragraph from "@/components/template/headings/Paragraph";
 import React from "react";
 import ChooseUs from "@/lib/ChooseUs";
+import { useMyContext } from "@/contexts/MyContexts";
 
 export default function ChooseSection() {
+  const {theme} = useMyContext();
   return (
     <div className="w-full max-w-[1210px] mx-auto">
       <div className="flex flex-col items-center justify-center px-4 space-y-2 pt-20 pb-10 w-full">
         <HeaderLarge
-          color="black"
+          color={theme === "light" ?"black" : "white"}
           fontSize="48"
           smallScreenFont="36"
           fontFamily="font-custom"
@@ -18,7 +20,7 @@ export default function ChooseSection() {
         >
           Why Choose US ?
         </HeaderLarge>
-        <Paragraph fontSize="large" color="black" textAlign="text-center">
+        <Paragraph fontSize="large" color={theme === "light" ?"black" : "white"} textAlign="text-center">
           We tend to provide the best services in order to build long term
           relationships with our clients
         </Paragraph>

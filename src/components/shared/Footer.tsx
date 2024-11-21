@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import React from "react";
 import { IMAGES } from "../../../public/images";
@@ -10,10 +11,12 @@ import { AiFillInstagram } from "react-icons/ai";
 import { GrLinkedinOption } from "react-icons/gr";
 import { GrYoutube } from "react-icons/gr";
 import Button from "../template/button/Button";
+import { useMyContext } from "@/contexts/MyContexts";
 
 export default function Footer() {
+  const {theme} = useMyContext();
   return (
-    <div className="relative bg-white py-14">
+    <div className={`relative ${theme === "light" ? "bg-white" : "bg-black" } py-14`}>
       <div className="w-[93%] relative z-10 flex flex-col py-6 px-6 rounded-3xl max-w-[1300px] mx-auto bg-black h-auto">
         <div className="flex lg:flex-row flex-col justify-between items-start w-[100%]">
           <div className="space-y-6 flex flex-col xs:items-center lg:items-start lg:w-[26%] w-full">
@@ -174,9 +177,9 @@ export default function Footer() {
       </div>
       <div
         style={{
-          backgroundImage: "url('/images/sideImage/footerbg.webp')",
+          backgroundImage: "url('/images/sideImage/footerbg.PNG')",
         }}
-        className="absolute z-0 left-0 right-0 bg-cover bottom-0  mx-auto flex justify-center h-full w-full"
+        className="absolute z-0 left-0 right-0 -top-20 bg-left-top mx-auto flex justify-start h-[546px] w-full"
       ></div>
     </div>
   );
