@@ -6,7 +6,7 @@ import ProjectSection from "@/components/shared/pageSection/portfolioPageSection
 import ReadyToBuild from "@/components/shared/pageSection/servicePageSection/ReadyToBuild";
 import { useMyContext } from "@/contexts/MyContexts";
 
-export default function page() {
+export default function Portfolio() {
   const {theme} = useMyContext();
   return (
     <div className={` ${ theme === "light" ? "bg-white" : "bg-black"} `}>

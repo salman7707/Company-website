@@ -4,7 +4,7 @@ import ContactUs from '@/components/shared/pageSection/homePageSection/ContactUs
 import { useMyContext } from '@/contexts/MyContexts'
 import React from 'react'
 
-export default function page() {
+export default function Contact() {
   const {theme} = useMyContext();
   return (
     <div className={`${ theme === "light" ? "bg-white":"bg-black"}`}>

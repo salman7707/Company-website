@@ -10,6 +10,8 @@ interface textpage {
     | "Inter-bold"
     | "Poppins-medium"
     | "Poppins-regular";
+  smallScreenFont?: string;
+  mdScreenFont?: string;
   color?: "primary" | "secondary" | "white" | "gray" | "black" | "medgray";
   fontSize?: "16" | "18" | "20" | "24" | "26" | "28";
   textAlign?: "left" | "center" | "right";
@@ -27,6 +29,8 @@ export default function HeadingMedium({
   textAlign = "left",
   paddingTop,
   paddingBottom,
+  smallScreenFont,
+  mdScreenFont,
   weight = "bold",
   leading,
 }: textpage) {
@@ -82,9 +86,23 @@ export default function HeadingMedium({
       : color === "medgray"
       ? "text-medGray"
       : "text-secondary";
+  const smallScreenFontClass =
+    smallScreenFont === "36"
+      ? "text-[36px]"
+      : smallScreenFont === "30"
+      ? "text-[30px]"
+      : smallScreenFont === "46"
+      ? "text-[46px]"
+      : smallScreenFont === "16" ? "text-[16px]" : "";
+  const mdScreenFontClass =
+    mdScreenFont === "64"
+      ? "md:text-[64px]"
+      : mdScreenFont === "48"
+      ? "md:text-[48px] "
+      : "";
   return (
     <h1
-      className={`${fontClass} ${ColorClasses} ${paddingTopClass} ${paddingBottomClass} text-${textAlign} ${sizeClass} ${weightClasses} ${leadingClasses}`}
+      className={`${smallScreenFontClass} ${mdScreenFontClass} ${fontClass} ${ColorClasses} ${paddingTopClass} ${paddingBottomClass} text-${textAlign} ${sizeClass} ${weightClasses} ${leadingClasses}`}
     >
       {children}
     </h1>

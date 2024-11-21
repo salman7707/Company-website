@@ -27,7 +27,9 @@ export default function Navbar() {
             src={theme === "light" ? IMAGES.LOGO : IMAGES.LOGOW}
             width={230}
             height={160}
-            alt="Logo"
+            layout="intrinsic"
+            alt="logo"
+            sizes="(max-width:640px)100vw,(max-width:1024px)50vw,460px"
           />
         </Link>
       </div>
@@ -41,7 +43,7 @@ export default function Navbar() {
           <div className="group relative flex justify-between items-center">
             <Link href={"/services"}>Services</Link>
             <IoIosArrowDown />
-            <div className="hidden absolute top-10 group-hover:block bg-white w-[500px] h-40 rounded-md">
+            <div className="hidden absolute top-10 group-focus:block bg-white w-[500px] h-40 rounded-md">
               <div className="grid grid-cols-2 p-8 space-y-3 text-black">
                 <div>NFT Development</div>
                 <div>Smart Contract</div>

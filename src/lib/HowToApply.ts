@@ -6,7 +6,6 @@ interface ImageData {
     heading?: string;
     subheading?: string;
     arrow?: boolean;
-    translate?:number
 }
 
 const HowToApply: ImageData[] = [
@@ -16,7 +15,6 @@ const HowToApply: ImageData[] = [
         heading:"Application",
         subheading: "Drop us on Application",
         arrow: true,
-        translate:0,
     },
     {
         id: 2,
@@ -24,7 +22,6 @@ const HowToApply: ImageData[] = [
         heading:"Technical Assessment",
         subheading:"Show us your skills on a practical assigment",
         arrow: true,
-        translate:32,
     },
     {
         id: 3,
@@ -32,7 +29,6 @@ const HowToApply: ImageData[] = [
         heading:"Interview",
         subheading:"impress us in an interview",
         arrow: false,
-        translate:60,
     },
 ]
 export default HowToApply;

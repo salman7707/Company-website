@@ -7,7 +7,7 @@ import ChooseSection from "@/components/shared/pageSection/servicePageSection/Ch
 import ReadyToBuild from "@/components/shared/pageSection/servicePageSection/ReadyToBuild";
 import { useMyContext } from "@/contexts/MyContexts";
 
-export default function page() {
+export default function Services() {
   const {theme} = useMyContext();
   return (
     <div className={` ${ theme === "light" ? "bg-white" : "bg-black" } `}>
