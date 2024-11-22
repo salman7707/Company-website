@@ -23,39 +23,9 @@ export default function Portfolio() {
           visionary builders and Blockchain entrepreneurs."
         headingFont={64}
       />
-      <ProjectSection
-        heading="MoonBase Alpha"
-        paragraph="A revolutionary liquid staking protocol bringing node operators and validators together."
-        list1="Product Launch Strategy"
-        list2="
-           Smart Contract Development"
-        list3="
-         liquid staking innovation"
-        list4="
-        UI/UX for Operator Staker collaboration"
-        img={IMAGES.PROJECT1}
-      />
-      <ProjectSection
-        flow={true}
-        heading="Web3Indexer"
-        paragraph="Enterprise-grade APIs and real-time blockchain data that make Web3 development as easy as Web2."
-        list1="Market Place Aggregator"
-        list2="
-           Blockchian Indexer"
-        list3="
-         NFT Explorer"
-        list4="UI/UX for Web3 Indexer"
-        img={IMAGES.PROJECT2}
-      />
-      <ProjectSection
-        heading="Kwikswap"
-        paragraph="A revolutionary liquid staking protocol bringing node operators and validators together"
-        list1="Product Launch Strategy"
-        list2="Smart Contract Development"
-        list3="liquid staking innovation"
-        list4="UI/UX for Operator Staker collaboration"
-        img={IMAGES.PROJECT3}
-      />
+      
+      
+      <ProjectSection/>
       <ReadyToBuild/>
     </div>
   );

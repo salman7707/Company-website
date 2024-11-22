@@ -1,13 +1,10 @@
 "use client";
-import Button from "@/components/template/button/Button";
-import List from "@/components/template/form/list/list";
-import HeaderLarge from "@/components/template/headings/HeaderLarge";
-import Paragraph from "@/components/template/headings/Paragraph";
-import Image from "next/image";
-import React from "react";
-import { GoArrowRight } from "react-icons/go";
+import React, {
+  useEffect,
+  useState,
+} from "react";
 import { IMAGES } from "../../../../../public/images";
-import { useMyContext } from "@/contexts/MyContexts";
+import HeaderMedium from "@/components/template/headings/HeaderMedium";
 
 interface ProjectSection {
   flow?: boolean;
@@ -19,20 +16,28 @@ interface ProjectSection {
   list4?: string;
   img?: string;
 }
+interface e {
+  x: number;
+  y: number;
+}
 
-export default function ProjectSection({
-  flow = false,
-  heading,
-  paragraph,
-  list1,
-  list2,
-  list3,
-  list4,
-  img,
-}: ProjectSection) {
-  const { theme } = useMyContext();
+export default function ProjectSection({ flow = false }: ProjectSection) {
+  const [position, setPosition] = useState<e>({ x: 0, y: 0 });
+  useEffect(() => {
+    const handleMouse = (e: MouseEvent) => {
+      setPosition({
+        x: e.clientX,
+        y: e.clientY,
+      });
+    };
+    window.addEventListener("mousemove", handleMouse);
+    return () => {
+      window.removeEventListener("mousemove", handleMouse);
+    };
+  }, []);
+
   return (
-    <div className="w-full max-w-[1210px] mx-auto lg:pt-28 pt-10 relative">
+    <div className="w-full max-w-[1210px] mx-auto lg:pt-28 pt-10 relative py-20">
       <div
         className={`flex  ${
           flow === true
@@ -40,83 +45,35 @@ export default function ProjectSection({
             : "lg:flex-row flex-col-reverse"
         } flex-row xl:px-0 lg:px-6 items-center xl:justify-between justify-center mx-auto md:w-[60%]  lg:w-full w-[94%]`}
       >
-        <div className="w-full space-y-5 xl:p-0 lg:p-6 pt-4">
-          <HeaderLarge
-            color={theme === "light" ? "black" : "white"}
-            fontSize="36"
-            fontFamily="font-custom"
-            weight="medium"
-            smallScreenFont="36"
-            textAlign="text-center lg:text-left"
-          >
-            {heading}
-          </HeaderLarge>
-          <Paragraph
-            color={theme === "light" ? "black" : "white"}
-            fontSize="large"
-            weight="medium"
-          >
-            {paragraph}
-          </Paragraph>
-          <div className="space-y-1">
-            <List
-              color={theme === "light" ? "black" : "white"}
-              fontSize="medium"
-              fontFamily="font-custom"
-              weight="medium"
-            >
-              {list1}
-            </List>
-            <List
-              color={theme === "light"? "black" : "white"}
-              fontSize="medium"
-              fontFamily="font-custom"
-              weight="medium"
-            >
-              {list2}
-            </List>
-            <List
-              color={theme === "light"? "black" : "white"}
-              fontSize="medium"
-              fontFamily="font-custom"
-              weight="medium"
-            >
-              {list3}
-            </List>
-            <List
-              color={theme === "light"? "black" : "white"}
-              fontSize="medium"
-              fontFamily="font-custom"
-              weight="medium"
-            >
-              {list4}
-            </List>
-          </div>
-          <div className="flex lg:justify-start justify-center ">
-            <Button
-              color="primary"
-              fontSize="extralarge"
-              fontFamily="font-manrope"
-              rounded="null"
-              className="border-b-2 border-primary"
-            >
-              <div className="flex items-center justify-center">
-                View Case Study
-                <GoArrowRight className="text-primary text-3xl group-hover:pl-2 font-bold  " />
-              </div>
-            </Button>
+        <div className="w-full">
+          <div className="bg-gradient-to-br from-primary to-primary w-[420px] overflow-hidden group h-[450px] border-white relative z-10 flex items-end ">
+           
+            <div className="translate-y-40 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-transform duration-1000 ease-in-out w-full z-10 text-white relative bg-black px-3 py-[34px] space-y-4 border-b-2 border-b-primary">
+              <HeaderMedium color="primary" fontSize="24">
+                Weather Forecast
+              </HeaderMedium>
+              <HeaderMedium color="white" fontSize="20">
+                Application + SEO
+              </HeaderMedium>
+            </div>
+
+            <div className="z-0 absolute bg-cover top-0 bottom-0 h-full bg-gradient-to-t from-primary to-primary">
+              <img
+                src={IMAGES.TEN}
+                alt="project1"
+                className="z-0 w-[420px] h-full"
+              />
+            </div>
+            <div className="absolute "></div>
           </div>
         </div>
-        <div className="xl:w-full lg:w-11/12 lg:h-[300px]">
-          <Image
-            src={img || IMAGES.PROJECT1}
-            alt="project1"
-            width={548}
-            height={200}
-            layout="intrinsic"
-            sizes="(max-width:640px)100vw,(max-width:1024px)50vw,460px"
-          />
-        </div>
+        <div
+          className={`w-6 h-6 bg-[#9696964D] z-50 fixed rounded-full`}
+          style={{
+            top: `${position.y}px`,
+            left: `${position.x}px`,
+          }}
+        ></div>
       </div>
     </div>
   );

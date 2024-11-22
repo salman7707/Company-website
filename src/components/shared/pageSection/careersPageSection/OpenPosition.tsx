@@ -58,18 +58,18 @@ export default function OpenPosition() {
                   <FaLocationDot
                     className={`${
                       theme === "light" ? "text-black" : "text-white"
-                    } text-2xl`}
+                    } md:text-2xl text-xl`}
                   />
                   <HeaderMedium
                     fontSize="26"
-                    smallScreenFont="16"
+                    smallScreenFont="14"
                     weight="normal"
                     color={theme === "light" ? "black" : "white"}
                   >
                     {data.location}
                   </HeaderMedium>
                 </div>
-                {mern.open ? (
+                {mern.open && index === mern.id ? (
                   <IoIosArrowUp
                     className="text-3xl"
                     color={theme === "light" ? "black" : "white"}

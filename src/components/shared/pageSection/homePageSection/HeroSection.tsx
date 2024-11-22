@@ -105,13 +105,16 @@ export default function HeroSection({
         </div>
       </div>
       <div
-        style={{
+        
+        className={`z-0 bg-cover bg-transparent absolute bg-center bg-no-repeat ${
+          bgImg === IMAGES.PORTBG ? "-top-6 right-0 bg-right-top xl:w-[43%] lg:w-[64%] md:w-[75%] md:h-[58%] h-[40%] lg:h-full" : bgImg === "none" ? "hidden" : "top-10 lg:h-full md:h-[45%] h-[20%] w-full"
+        }`}
+      >
+        <img src={bgImg} className={`w-full h-full bg-transparent`}  />
+        {/* style={{
           backgroundImage: `url(${bgImg})`,
-        }}
-        className={`absolute bg-center bg-no-repeat ${
-          bgImg === IMAGES.PORTBG ? "-top-28 bg-right-top" : "top-10"
-        } z-0 h-[933px] w-full`}
-      ></div>
+        }} */}
+      </div>
     </div>
   );
 }

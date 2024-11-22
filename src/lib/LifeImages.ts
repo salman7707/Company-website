@@ -39,23 +39,6 @@ const LifeImages:image[] = [
         id:8,
         src:IMAGES.PIX9,
     },
-    {
-        id:9,
-        src:IMAGES.PIX10,
-    },
-    {
-        id:10,
-        src:IMAGES.PIX1,
-    },
-    {
-        id:11,
-        src:IMAGES.PIX2,
-    },
-    {
-        id:12,
-        src:IMAGES.PIX4,
-    },
-
 ]
 
 export default LifeImages;

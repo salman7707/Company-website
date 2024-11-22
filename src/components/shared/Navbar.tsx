@@ -9,17 +9,37 @@ import ToggleBtn from "../template/button/ToggleBtn";
 import { IoCloseOutline } from "react-icons/io5";
 import Link from "next/link";
 import { useMyContext } from "@/contexts/MyContexts";
+import { HiUsers } from "react-icons/hi2";
+import { FaLaptop } from "react-icons/fa";
 
 export default function Navbar() {
-  const { theme} = useMyContext();
+  const { theme } = useMyContext();
+  const [open, setOpen] = useState(false);
   const [hamburState, setHamburState] = useState(false);
+
+  let timeoutId: ReturnType<typeof setTimeout>;
+
+  const handleMouseEnter = () => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      setOpen(true);
+    }, 300);
+  };
+
+  const handleMouseLeave = () => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      setOpen(false);
+    }, 300);
+  };
+
   return (
     <div
       className={`${
         theme === "light"
           ? "bg-white shadow-2xl "
           : "bg-black shadow-custom-shadow shadow-gray"
-      }  absolute mt-4 z-20 left-0 right-0 top-0 rounded-full w-[96%] max-w-[1255px] mx-auto flex items-center justify-between px-4 py-2`}
+      }  absolute mt-4 z-20 left-0 right-0 top-0 rounded-full md:w-[96%] w-[90%] max-w-[1255px] mx-auto flex items-center justify-between md:px-4 px-3 md:py-2 py-4`}
     >
       <div className="flex-shrink-0">
         <Link href={"/"}>
@@ -29,45 +49,54 @@ export default function Navbar() {
             height={160}
             layout="intrinsic"
             alt="logo"
-            sizes="(max-width:640px)100vw,(max-width:1024px)50vw,460px"
+            className=" md:w-[230px] h-auto w-[170px]"
           />
         </Link>
       </div>
 
       <div className="flex-1 hidden relative  lg:flex items-center justify-between ">
         <div
-          className={`flex items-center xl:px-12 lg:px-5 justify-center font-custom ${
+          className={`flex items-center xl:px-14 lg:px-5 justify-center font-custom ${
             theme === "light" ? "text-black" : "text-white"
-          } font-medium text-xl xl:space-x-7 lg:space-x-6`}
+          } font-medium text-xl xl:space-x-10 lg:space-x-6`}
         >
-          <div className="group relative flex justify-between items-center">
+          <div className="flex justify-between items-center">
             <Link href={"/services"}>Services</Link>
-            <IoIosArrowDown />
-            <div className="hidden absolute top-10 group-focus:block bg-white w-[500px] h-40 rounded-md">
-              <div className="grid grid-cols-2 p-8 space-y-3 text-black">
-                <div>NFT Development</div>
-                <div>Smart Contract</div>
-                <div>DEFI</div>
-                <div>DAPP</div>
-                <div>DEX</div>
-                <div>Exchange Wallets</div>
-              </div>
-            </div>
           </div>
           <div>
             <Link href={"/portfolio"}>Portfolio</Link>
           </div>
-          <div className="flex justify-between items-center">
-            Products
-            <IoIosArrowDown />
-          </div>
-          <div className="flex  justify-between items-center">
-            Discover
-            <IoIosArrowDown />
-          </div>
-          <div className="flex justify-between items-center">
-            <Link href={"/about"}> Our Company </Link>
-            <IoIosArrowDown />
+          <div className="flex justify-between items-center">Products</div>
+          <div className="flex  justify-between items-center">Discover</div>
+          <div
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className="group flex justify-between items-center relative"
+          >
+            <div className={`space-x-1 flex items-center`}>
+              <Link href={"/about"}> Our Company </Link>
+              <IoIosArrowDown />
+            </div>
+            {open && (
+              <div
+                className={`absolute ${ theme === "light"? " shadow-custom-shadow shadow-gray" : "" } shadow-2xl top-10 bg-white w-[350px] h-16 rounded-md ${
+                  open ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                <div className="grid grid-cols-2 px-2 py-1.5 gap-y-4 text-black w-full">
+                  <Link href={"/about"}>
+                    <div className="flex hover:bg-black rounded-lg py-3 px-6 w-[170px] items-center hover:text-white justify-start gap-x-3 text-lg">
+                      <HiUsers /> About
+                    </div>
+                  </Link>
+                  <Link href={"/careers"}>
+                    <div className="flex hover:bg-black py-3 rounded-lg px-6 w-[170px] items-center hover:text-white justify-start gap-x-3 text-lg">
+                      <FaLaptop /> Careers
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -83,7 +112,9 @@ export default function Navbar() {
 
       <div className="lg:hidden flex">
         <GiHamburgerMenu
-          className={`${ theme === "light" ? "text-black" : "text-primary" } text-3xl`}
+          className={`${
+            theme === "light" ? "text-black" : "text-primary"
+          } text-3xl`}
           onClick={() => setHamburState(true)}
         />
       </div>

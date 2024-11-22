@@ -4,6 +4,7 @@ import { IMAGES } from "../../../../public/images";
 import HeaderMedium from "../headings/HeaderMedium";
 import Button from "../button/Button";
 import Paragraph from "../headings/Paragraph";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 interface cardInter {
   img?: string;
@@ -64,7 +65,10 @@ export default function Card({
             hoverText="white"
             className="group-hover:bg-primary group-hover:text-white transition duration-300"
           >
-            Learn More
+            <div className="flex items-center relative pr-4">
+              Learn More
+              <MdOutlineKeyboardArrowRight className="hidden absolute group-hover:text-white group-hover:block text-4xl -top-1 -right-3 font-light" />
+            </div>
           </Button>
         )}
       </div>

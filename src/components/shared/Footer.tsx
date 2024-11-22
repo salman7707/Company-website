@@ -17,8 +17,9 @@ export default function Footer() {
   const {theme} = useMyContext();
   return (
     <div className={`relative ${theme === "light" ? "bg-white" : "bg-black" } py-14`}>
-      <div className="w-[93%] relative z-10 flex flex-col py-6 px-6 rounded-3xl max-w-[1300px] mx-auto bg-black h-auto">
-        <div className="flex lg:flex-row flex-col justify-between items-start w-[100%]">
+      <div className="w-[93%] relative z-10 flex flex-col  py-6 px-6 rounded-3xl max-w-[1300px] mx-auto bg-black h-auto">
+        
+        <div className="flex lg:flex-row flex-col justify-between items-start w-[100%] h-auto xs:space-y-0 space-y-5">
           <div className="space-y-6 flex flex-col xs:items-center lg:items-start lg:w-[26%] w-full">
             <Image
               src={IMAGES.FLOGO}
@@ -74,7 +75,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="flex lg:space-y-7 xs:space-y-4 lg:pt-4 xs:pt-8 flex-col justify-start items-start xl:w-[10%] lg:w-[18%] xs:w-full">
+          <div className="flex lg:space-y-7 space-y-4 lg:pt-4 xs:pt-8 flex-col justify-start items-start xl:w-[10%] lg:w-[18%] xs:w-full">
             <div>
               <HeadingMedium color="white" fontSize="20" weight="normal">
                 Industries
@@ -96,7 +97,7 @@ export default function Footer() {
               </HeadingMedium>
             </div>
           </div>
-          <div className="flex lg:space-y-7 xs:space-y-4 lg:pt-4 xs:pt-8 flex-col justify-end items-start lg:w-[18%] xs:w-full">
+          <div className="flex lg:space-y-7 space-y-4 lg:pt-4 xs:pt-8 flex-col justify-end items-start lg:w-[18%] xs:w-full">
             <div>
               <HeadingMedium color="white" fontSize="20" weight="normal">
                 Discover
@@ -118,7 +119,7 @@ export default function Footer() {
               </HeadingMedium>
             </div>
           </div>
-          <div className="flex lg:space-y-7 xs:space-y-4 lg:pt-4 xs:pt-8 flex-col justify-start items-start xs:w-full xl:w-[13%]  lg:w-[15%]">
+          <div className="flex lg:space-y-7 space-y-4 lg:pt-4 xs:pt-8 flex-col justify-start items-start xs:w-full xl:w-[13%]  lg:w-[15%]">
             <div>
               <HeadingMedium color="white" fontSize="20" weight="normal">
                 Our Company
@@ -148,8 +149,8 @@ export default function Footer() {
         </div>
 
         <div className="border-b border-dotted border-gray pt-6 w-full"></div>
-        <div className="w-full flex lg:flex-row xs:flex-col  items-center justify-between ">
-          <div className=" lg:w-[25%] xs:w-full flex pt-4 xs:pt-5 lg:space-x-0 xs:space-x-4 justify-between">
+        <div className="w-full flex lg:flex-row flex-col  items-center justify-between ">
+          <div className=" lg:w-[25%] w-full flex pt-5 lg:space-x-0 space-x-4 justify-between">
             <HeadingMedium
               color="gray"
               fontSize="18"
@@ -167,7 +168,7 @@ export default function Footer() {
               Terms of Service
             </HeadingMedium>
           </div>
-          <div className="flex space-x-6 lg:pt-4 xs:py-5 items-center justify-between">
+          <div className="flex space-x-6 lg:pt-4 py-5 items-center justify-between">
             <BsTwitterX color="white" className="text-xl" />
             <AiFillInstagram color="white" className="text-xl" />
             <GrLinkedinOption color="white" className="text-xl" />
@@ -179,7 +180,7 @@ export default function Footer() {
         style={{
           backgroundImage: "url('/images/sideImage/footerbg.PNG')",
         }}
-        className="absolute z-0 left-0 right-0 -top-20 bg-left-top mx-auto flex justify-start h-[546px] w-full"
+        className="absolute z-0 left-0 right-0 -top-20 bg-cover bg-center mx-auto h-[546px] w-full"
       ></div>
     </div>
   );

@@ -24,7 +24,7 @@ export default function LifeSection() {
         {LifeImages.map((data) => (
           <div className="rounded-3xl " key={data.id}>
             <Image
-              src={data.src || IMAGES.PIX1}
+              src={IMAGES.TOUR}
               width={300}
               height={228}
               alt="netixsol"

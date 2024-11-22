@@ -115,4 +115,6 @@ export const IMAGES = {
     PIX9:"/images/life/pix9.jpg",
     PIX10:"/images/life/pix10.jpg",
     STAR:"/images/icons/star.svg",
+    TOUR:"/images/icons/tour.jpg",
+    TEN:"/images/icons/10.png",
 }

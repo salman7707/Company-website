@@ -50,16 +50,16 @@ export default function HeadingMedium({
       : "font-poppins";
   const sizeClass =
     fontSize === "16"
-      ? "text-base"
+      ? "lg:text-base"
       : fontSize === "18"
-      ? "text-lg"
+      ? "lg:text-lg"
       : fontSize === "26"
-      ? "text-[26px]"
+      ? "lg:text-[26px]"
       : fontSize === "24"
-      ? "text-[24px]"
+      ? "lg:text-[24px]"
       : fontSize === "28"
-      ? "text-[28px]"
-      : "text-xl";
+      ? "lg:text-[28px]"
+      : "lg:text-xl";
   const weightClasses =
     weight === "bold"
       ? "font-bold"
@@ -93,7 +93,7 @@ export default function HeadingMedium({
       ? "text-[30px]"
       : smallScreenFont === "46"
       ? "text-[46px]"
-      : smallScreenFont === "16" ? "text-[16px]" : "";
+      : smallScreenFont === "14" ? "text-[14px]" : "";
   const mdScreenFontClass =
     mdScreenFont === "64"
       ? "md:text-[64px]"

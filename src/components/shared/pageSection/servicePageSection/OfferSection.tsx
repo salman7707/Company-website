@@ -7,7 +7,7 @@ import { useMyContext } from "@/contexts/MyContexts";
 export default function OfferSection() {
   const {theme} = useMyContext();
   return (
-    <div className={`${ theme === "light" ? "bg-white" : "bg-black" } w-full relative z-10 `}>
+    <div className={`${ theme === "light" ? "bg-white" : "bg-black" } bg-transparent w-full relative `}>
       <div className="relative py-14 w-[100%] max-w-[1210px] mx-auto z-10">
         <div className="space-y-4">
           <Paragraph
