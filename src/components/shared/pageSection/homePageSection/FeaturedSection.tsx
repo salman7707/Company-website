@@ -11,6 +11,7 @@ import React from "react";
 // import Image from "next/image";
 import { IMAGES } from "../../../../../public/images";
 import { useMyContext } from "@/contexts/MyContexts";
+import featuredImg from "@/lib/featuredImg";
 
 export default function FeaturedSection() {
   const { theme } = useMyContext();
@@ -51,51 +52,44 @@ export default function FeaturedSection() {
       {/* xl:w-[100%] xl:h-[100%] lg:w-[70%] lg:h-[70%] md:w-[50%] md:h-[50%]  */}
       <div className="whitespace-nowrap inline-block pt-20 overflow-hidden xl:w-[100%] md:w-[200%] xs:w-[350%]">
         <div className="scroll inline-block space-x-2">
-          <div className="inline-block align-middle w-auto h-auto whitespace-nowrap">
-            <img
-              src={theme === "light" ? IMAGES.ALPHA : IMAGES.ALPHAW}
-              alt="alpha"
-              className=""
-            />
-          </div>
-          <div className="inline-block align-middle w-auto h-auto whitespace-nowrap">
-            <img src={IMAGES.SW} alt="alpha" />
-          </div>
-          <div className="inline-block align-middle w-auto h-auto whitespace-nowrap">
-            <img src={IMAGES.DEFI} alt="alpha" />
-          </div>
-          <div className="inline-block align-middle w-auto h-auto whitespace-nowrap">
-            <img src={IMAGES.SHARK} alt="alpha" />
-          </div>
-          <div className="inline-block align-middle w-auto h-auto whitespace-nowrap">
-            <img src={IMAGES.AZHA} alt="alpha" />
-          </div>
-          <div className="inline-block align-middle w-auto h-auto whitespace-nowrap">
-            <img src={IMAGES.BANNER} alt="alpha" />
-          </div>
+          {featuredImg.map((data) => (
+            <div
+              key={data.id}
+              className="inline-block align-middle w-auto h-auto whitespace-nowrap"
+            >
+              <img
+                src={
+                  data.id === 1
+                    ? theme === "light"
+                      ? IMAGES.ALPHA
+                      : IMAGES.ALPHAW
+                    : data.src
+                }
+                alt="alpha"
+                className=""
+              />
+            </div>
+          ))}
         </div>
         <div className="scroll inline-block  space-x-2">
-          <div className="inline-block align-middle w-auto h-auto whitespace-nowrap">
-            <img
-              src={theme === "light" ? IMAGES.ALPHA : IMAGES.ALPHAW}
-              alt="alpha"
-            />
-          </div>
-          <div className="inline-block align-middle w-auto h-auto whitespace-nowrap">
-            <img src={IMAGES.SW} alt="alpha" />
-          </div>
-          <div className="inline-block align-middle w-auto h-auto whitespace-nowrap">
-            <img src={IMAGES.DEFI} alt="alpha" />
-          </div>
-          <div className="inline-block align-middle w-auto h-auto whitespace-nowrap">
-            <img src={IMAGES.SHARK} alt="alpha" />
-          </div>
-          <div className="inline-block align-middle w-auto h-auto whitespace-nowrap">
-            <img src={IMAGES.AZHA} alt="alpha" />
-          </div>
-          <div className="inline-block align-middle w-auto h-auto whitespace-nowrap">
-            <img src={IMAGES.BANNER} alt="alpha" />
-          </div>
+          {featuredImg.map((data) => (
+            <div
+              key={data.id}
+              className="inline-block align-middle w-auto h-auto whitespace-nowrap"
+            >
+              <img
+                src={
+                  data.id === 1
+                    ? theme === "light"
+                      ? IMAGES.ALPHA
+                      : IMAGES.ALPHAW
+                    : data.src
+                }
+                alt="alpha"
+                className=""
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

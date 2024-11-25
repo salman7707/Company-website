@@ -17,7 +17,7 @@ interface Button {
   color?: string;
   rounded?: "full" | "medium" | "null" | "normal";
   border?: "black" | "white";
-  hoverBg?: "white" | "black" | "primary" | "secondaryPurple";
+  hoverBg?: "white" | "black" | "primary" | "secondaryPurple" | "";
   hoverText?: "white" | "black" | "primary" | "secondaryPurple";
   className?: string;
 }
@@ -61,6 +61,8 @@ export default function Button({
       ? "bg-green-500"
       : bgColor === "white"
       ? "bg-white"
+      : bgColor === "lightgray"
+      ? "bg-lightgray"
       : "";
   const ColorClass =
     color === "primary"

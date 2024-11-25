@@ -34,7 +34,7 @@ const ChooseUs:chooseus[] = [
     },
     {
         id: 6,
-        heading: "On-Time Delivery",
+        heading: "On-Time and reliable delivery.",
         src: IMAGES.FRAME5,
     },
     {
@@ -44,7 +44,7 @@ const ChooseUs:chooseus[] = [
     },
     {
         id: 8,
-        heading: "Support & Maintenance",
+        heading: "Support & Maintenance Services",
         src:IMAGES.FRAME7,
     }
 ];

@@ -93,7 +93,8 @@ export default function HeadingMedium({
       ? "text-[30px]"
       : smallScreenFont === "46"
       ? "text-[46px]"
-      : smallScreenFont === "14" ? "text-[14px]" : "";
+      : smallScreenFont === "14" ? "text-[14px]" 
+      : smallScreenFont === "24"? "text-[24px]" :  "";
   const mdScreenFontClass =
     mdScreenFont === "64"
       ? "md:text-[64px]"

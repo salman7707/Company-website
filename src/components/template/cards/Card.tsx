@@ -47,6 +47,7 @@ export default function Card({
           fontFamily="font-custom"
           weight="medium"
           color="white"
+          smallScreenFont="24"
         >
           {heading}
         </HeaderMedium>

@@ -16,7 +16,7 @@ import { useMyContext } from "@/contexts/MyContexts";
 export default function Footer() {
   const {theme} = useMyContext();
   return (
-    <div className={`relative ${theme === "light" ? "bg-white" : "bg-black" } py-14`}>
+    <div className={`relative ${theme === "light" ? "bg-white" : "bg-black" } py-[52px]`}>
       <div className="w-[93%] relative z-10 flex flex-col  py-6 px-6 rounded-3xl max-w-[1300px] mx-auto bg-black h-auto">
         
         <div className="flex lg:flex-row flex-col justify-between items-start w-[100%] h-auto xs:space-y-0 space-y-5">

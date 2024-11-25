@@ -25,7 +25,7 @@ export default function ChooseSection() {
           relationships with our clients
         </Paragraph>
       </div>
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-6 md:gap-y-8 gap-y-6 lg:w-full md:w-[80%] mx-auto justify-items-center justify-center xl:px-0 lg:px-8 ">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-6 md:gap-y-8 gap-y-6 lg:w-full md:w-[80%] w-full mx-auto justify-items-center justify-center xl:px-0 lg:px-8 ">
         {ChooseUs.map((data) => (
           <div className="" key={data.id}>
             <SmallCard img={data.src} heading={data.heading} />

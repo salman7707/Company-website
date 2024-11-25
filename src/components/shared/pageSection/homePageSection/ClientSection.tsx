@@ -14,14 +14,17 @@ import Testimonial from "@/lib/TestimonialData";
 import { useMyContext } from "@/contexts/MyContexts";
 
 export default function ClientSection() {
-  const {theme } = useMyContext();
+  const { theme } = useMyContext();
   return (
     <div className="py-14 w-full max-w-[1210px] mx-auto">
       <div className="w-full flex flex-col items-center justify-center space-y-4">
         <HeaderMedium color="secondary" fontSize="20">
           OUR CLIENTS SAY
         </HeaderMedium>
-        <HeaderLarge color={theme === "light" ? "black" : "white"} fontSize="40">
+        <HeaderLarge
+          color={theme === "light" ? "black" : "white"}
+          fontSize="40"
+        >
           Feedback is breakfast for champions
         </HeaderLarge>
         <Paragraph
@@ -66,15 +69,14 @@ export default function ClientSection() {
             },
           }}
           modules={[Autoplay, Pagination, Navigation]}
-          className="mySwiper"
+          className="mySwiper transition-all duration-1000 ease-in-out"
         >
           {Testimonial.map((data) => (
             <SwiperSlide key={data.id}>
-              <div className="flex flex-col px-6 py-4 items-start justify-center space-y-1 rounded-3xl bg-darkpurple xl:w-[370px] xl:h-[280px] lg:w-[310px] lg:h-[260px] md:w-[320px] md:h-[270px] w-[305px] h-[270px]">
+              <div className="flex flex-col cursor-pointer px-6 py-4 items-start justify-center space-y-1 rounded-3xl bg-darkpurple xl:w-[370px] xl:h-[280px] lg:w-[310px] lg:h-[260px] md:w-[320px] md:h-[270px] w-[305px] h-[270px]">
                 <HeaderMedium
                   color="white"
                   fontSize="20"
-
                   fontFamily="font-custom"
                   weight="medium"
                 >

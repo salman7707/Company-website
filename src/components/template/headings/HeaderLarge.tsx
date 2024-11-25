@@ -82,7 +82,7 @@ export default function HeadingLarge({
       : color === "white"
       ? "text-white"
       : "text-secondary";
-      const smallScreenFontClass = smallScreenFont === "36" ? "text-[36px]" : smallScreenFont === "30" ?  "text-[30px]": smallScreenFont === "46" ? "text-[46px]" : ""
+      const smallScreenFontClass = smallScreenFont === "36" ? "text-[36px]" : smallScreenFont === "30" ?  "text-[30px]": smallScreenFont === "46" ? "text-[46px]" : smallScreenFont === "32" ? "text-[32px]" : ""
       const mdScreenFontClass = mdScreenFont === "64" ? "md:text-[64px]" : mdScreenFont === "48" ? "md:text-[48px] " : ""
   return (
     <h1

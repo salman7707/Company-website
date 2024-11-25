@@ -66,7 +66,9 @@ export default function Navbar() {
           <div>
             <Link href={"/portfolio"}>Portfolio</Link>
           </div>
-          <div className="flex justify-between items-center">Products</div>
+          <div className="flex justify-between items-center">
+            <Link href={"/courses"}>Courses</Link>
+          </div>
           <div className="flex  justify-between items-center">Discover</div>
           <div
             onMouseEnter={handleMouseEnter}
@@ -79,7 +81,9 @@ export default function Navbar() {
             </div>
             {open && (
               <div
-                className={`absolute ${ theme === "light"? " shadow-custom-shadow shadow-gray" : "" } shadow-2xl top-10 bg-white w-[350px] h-16 rounded-md ${
+                className={`absolute ${
+                  theme === "light" ? " shadow-custom-shadow shadow-gray" : ""
+                } shadow-2xl top-10 bg-white w-[350px] h-16 rounded-md ${
                   open ? "opacity-100" : "opacity-0"
                 }`}
               >
@@ -120,7 +124,7 @@ export default function Navbar() {
       </div>
       {hamburState && (
         <div
-          className={`transition-transform ease-in-out duration-500 absolute space-y-4 z-10 top-1 shadow-2xl bg-white w-[80%] h-auto px-10 py-10 ${
+          className={`transition-all duration-700 ease-linear absolute space-y-4 z-10 top-1 shadow-2xl bg-white w-[80%] h-full px-10 py-10 ${
             hamburState ? "translate-x-0" : "-translate-x-full"
           }`}
         >
@@ -146,8 +150,12 @@ export default function Navbar() {
               {" "}
               <Link href={"/contact"}> Contact Us </Link>
             </div>
-            <div>Blog</div>
-            <div>Careers</div>
+            <div>
+              <Link href={"/courses"}>Courses</Link>
+            </div>
+            <div>
+              <Link href={"/careers"}>Careers</Link>
+            </div>
           </div>
         </div>
       )}
