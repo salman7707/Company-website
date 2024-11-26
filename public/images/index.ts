@@ -129,4 +129,5 @@ export const IMAGES = {
     COURSE4:"/images/courses/kotlin.jpg",
     COURSE5:"/images/courses/shopify.jpg",
     COURSE6:"/images/courses/facebook.jpg",
+    DUMMY:"/images/sideImage/dummy.png",
 }

@@ -1,9 +1,5 @@
+import { image } from "@/components/shared/types/collectionsListTypes/LifeImagesType";
 import { IMAGES } from "../../public/images";
-
-interface image {
-    id:number;
-    src:string;
-}
 
 const LifeImages:image[] = [
     {

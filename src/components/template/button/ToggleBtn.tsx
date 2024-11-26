@@ -12,30 +12,67 @@ export default function ToggleBtn() {
 
   return (
     <div
-      className={`px-1.5 w-16 h-8 flex items-center overflow-hidden relative rounded-full ${ theme === "light" ?" bg-blue-200":"bg-lightgray" } `}
+      className={`px-1.5 w-16 h-8 flex items-center overflow-hidden relative rounded-full ${
+        theme === "light" ? " bg-blue-200" : "bg-lightgray"
+      } `}
       onClick={handleClick}
     >
       <div
-        className={` ${ theme === "light" ? "bg-yellow" : "bg-white w-5 h-5 overflow-hidden" }  w-5 h-5 rounded-full transition-transform duration-100 relative ${
+        className={` ${
+          theme === "light" ? "bg-yellow" : "bg-white w-5 h-5 overflow-hidden"
+        }  w-5 h-5 rounded-full transition-transform duration-100 relative ${
           theme === "light" ? "translate-x-0 " : "translate-x-8"
         }`}
       >
-        <div className={`bg-lightgray w-5 h-5 rounded-full absolute right-2 -top-1 ${theme === "light" ? "hidden":"flex"} `}></div>
+        <div
+          className={`bg-lightgray w-5 h-5 rounded-full absolute right-2 -top-1 ${
+            theme === "light" ? "hidden" : "flex"
+          } `}
+        ></div>
       </div>
-      <Image src={IMAGES.STAR} width={10} height={10} alt={"star"} className={` ${theme === "light" ? "hidden":"flex"} absolute left-2 animate-spin top-1 transition duration-1000`} style={{
-        filter:"invert(1)"
-      }}/>
-      <Image src={IMAGES.STAR} width={10} height={10} alt={"star"} className={`${theme === "light" ? "hidden":"flex"} absolute left-4 bottom-2 animate-pulse transition duration-1000`} style={{
-        filter:"invert(1)"
-      }}/>
-      <Image src={IMAGES.STAR} width={10} height={10} alt={"star"} className={`${theme === "light" ? "hidden":"flex"} absolute left-[26px] top-0 animate-scroll transition duration-1000`} style={{
-        filter:"invert(1)"
-      }}/>
+      <Image
+        src={IMAGES.STAR}
+        width={10}
+        height={10}
+        alt={"star"}
+        className={` ${
+          theme === "light" ? "hidden" : "flex"
+        } absolute left-2 animate-spin top-1 transition duration-1000`}
+        style={{
+          filter: "invert(1)",
+        }}
+      />
+      <Image
+        src={IMAGES.STAR}
+        width={10}
+        height={10}
+        alt={"star"}
+        className={`${
+          theme === "light" ? "hidden" : "flex"
+        } absolute left-4 bottom-2 animate-pulse transition duration-1000`}
+        style={{
+          filter: "invert(1)",
+        }}
+      />
+      <Image
+        src={IMAGES.STAR}
+        width={10}
+        height={10}
+        alt={"star"}
+        className={`${
+          theme === "light" ? "hidden" : "flex"
+        } absolute left-[26px] top-0 animate-scroll transition duration-1000`}
+        style={{
+          filter: "invert(1)",
+        }}
+      />
       <svg
         stroke="currentColor"
         fill="white"
         viewBox="0 0 640 512"
-        className={`${ theme === "light" ? "flex" :"hidden"} text-white animatetogglebtn sm:text-2xl -bottom-1 absolute -left-2`}
+        className={`${
+          theme === "light" ? "flex" : "hidden"
+        } text-white animatetogglebtn sm:text-2xl -bottom-1 absolute -left-2`}
         height="0.99rem"
         width="0.99rem"
         xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +83,9 @@ export default function ToggleBtn() {
         stroke="currentColor"
         fill="white"
         viewBox="0 0 640 512"
-        className={`${ theme === "light" ? "flex" :"hidden"} move-horizantal text-white sm:text-2xl top-0 animatetogglebtn absolute -left-4`}
+        className={`${
+          theme === "light" ? "flex" : "hidden"
+        } move-horizantal text-white sm:text-2xl top-0 animatetogglebtn absolute -left-4`}
         height="1.35rem"
         width="1.2rem"
         xmlns="http://www.w3.org/2000/svg"

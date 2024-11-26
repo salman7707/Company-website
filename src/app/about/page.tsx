@@ -8,6 +8,7 @@ import IconsSection from '@/components/shared/pageSection/aboutPageSection/Icons
 import CeoSection from '@/components/shared/pageSection/aboutPageSection/CeoSection'
 import ReadyToBuild from '@/components/shared/pageSection/servicePageSection/ReadyToBuild'
 import { useMyContext } from '@/contexts/MyContexts'
+import TeamSection from '@/components/shared/pageSection/aboutPageSection/TeamSection'
 
 export default function About() {
   const {theme} = useMyContext();
@@ -22,6 +23,7 @@ export default function About() {
         <MissionSection/>
         <VisionSection/>
         <IconsSection/>
+        <TeamSection/>
         <CeoSection/>
         <ReadyToBuild/>
     </div>

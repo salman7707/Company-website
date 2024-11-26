@@ -27,16 +27,23 @@ export default function ApplySection() {
                 transition: "filter 0.3s ease",
               }}
             />
-
             How to Apply
           </div>
         </HeaderLarge>
       </div>
       <div className="py-8 flex lg:flex-row flex-col justify-center gap-y-10 items-center gap-x-8 lg:pb-60 pb-6 w-[95%] mx-auto">
-        {HowToApply.map((data,index) => (
+        {HowToApply.map((data, index) => (
           <div
             key={data.id}
-            className={`flex relative flex-col items-center justify-center gap-y-10 w-full ${ index == 0 ? "lg:translate-y-0" : index===1 ? "lg:translate-y-32" :  index === 2  ? "lg:translate-y-60" :""} `}
+            className={`flex relative flex-col items-center justify-center gap-y-10 w-full ${
+              index == 0
+                ? "lg:translate-y-0"
+                : index === 1
+                ? "lg:translate-y-32"
+                : index === 2
+                ? "lg:translate-y-60"
+                : ""
+            } `}
           >
             <div className="w-[60px] relative h-[60px] bg-primary rounded-full text-3xl font-custom font-medium text-white flex items-center justify-center ">
               0{data.id}

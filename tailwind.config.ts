@@ -9,6 +9,7 @@ export default {
   theme: {
     screens: {
       "xs":"320px",
+      "xss":"375px",
       "sm":"640px",
       "md":"768px",
       "lg":"1024px",
@@ -18,6 +19,7 @@ export default {
     extend: {
       boxShadow: {
         'custom-shadow': 'rgba(0, 0, 0, 0.35) 0px 1px 10px',
+        'custom-inner': 'inset 0 0 20px 8px rgba(0, 0, 0, 0.5)',
       },
       fontFamily:{
         custom:["MyCustomFont","sans-serif"]

@@ -2,16 +2,10 @@
 import HeadingLarge from "@/components/template/headings/HeaderLarge";
 import Paragraph from "@/components/template/headings/Paragraph";
 import React from "react";
-// import "swiper/css";
-// import "swiper/css/pagination";
-// import "swiper/css/navigation";
-// import { Swiper, SwiperSlide } from "swiper/react";
-
-// import { Autoplay, Pagination, Navigation } from "swiper/modules";
-// import Image from "next/image";
 import { IMAGES } from "../../../../../public/images";
 import { useMyContext } from "@/contexts/MyContexts";
 import featuredImg from "@/lib/featuredImg";
+import Image from "next/image";
 
 export default function FeaturedSection() {
   const { theme } = useMyContext();
@@ -57,7 +51,7 @@ export default function FeaturedSection() {
               key={data.id}
               className="inline-block align-middle w-auto h-auto whitespace-nowrap"
             >
-              <img
+              <Image
                 src={
                   data.id === 1
                     ? theme === "light"
@@ -65,19 +59,21 @@ export default function FeaturedSection() {
                       : IMAGES.ALPHAW
                     : data.src
                 }
+                width={300}
+                height={150}
                 alt="alpha"
-                className=""
+                className=" w-full h-full"
               />
             </div>
           ))}
         </div>
-        <div className="scroll inline-block  space-x-2">
+        <div className="scroll inline-block space-x-2">
           {featuredImg.map((data) => (
             <div
               key={data.id}
               className="inline-block align-middle w-auto h-auto whitespace-nowrap"
             >
-              <img
+              <Image
                 src={
                   data.id === 1
                     ? theme === "light"
@@ -85,8 +81,10 @@ export default function FeaturedSection() {
                       : IMAGES.ALPHAW
                     : data.src
                 }
+                width={300}
+                height={150}
                 alt="alpha"
-                className=""
+                className="w-full h-full"
               />
             </div>
           ))}

@@ -11,11 +11,14 @@ export default function ProjectSection() {
   const { theme } = useMyContext();
   const [state, setState] = useState<{ id: number }>({ id: 0 });
   const [type, setType] = useState("all");
-  const handleState = (id: number,type:string) => {
-    setState({ id: id});
+  const handleState = (id: number, type: string) => {
+    setState({ id: id });
     setType(type);
   };
-  const project = type === "all" ? ProjectData : ProjectData.filter( (project) => project.type === type )
+  const project =
+    type === "all"
+      ? ProjectData
+      : ProjectData.filter((project) => project.type === type);
   return (
     <div className="w-full max-w-[1210px] mx-auto lg:pt-28 pt-10 relative py-20">
       <div
@@ -52,11 +55,11 @@ export default function ProjectSection() {
         <div className="w-full grid xl:grid-cols-3 lg:grid-cols-2 justify-content-center gap-x-8 gap-y-8 xl:px-0 lg::px-20 px-4">
           {project.map((data, index) => (
             <div key={index}>
-                <ProjectCard
-                  heading={data.heading}
-                  smallHeading={data.headingsmall}
-                  img={data.src}
-                />
+              <ProjectCard
+                heading={data.heading}
+                smallHeading={data.headingsmall}
+                img={data.src}
+              />
             </div>
           ))}
         </div>

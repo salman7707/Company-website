@@ -3,6 +3,7 @@ import HeaderMedium from "@/components/template/headings/HeaderMedium";
 import Image from "next/image";
 import React from "react";
 import ImageData from "@/lib/images";
+import { IMAGES } from "../../../../../public/images";
 
 export default function TechnologySection() {
   return (
@@ -44,7 +45,13 @@ export default function TechnologySection() {
           <div className="inline-block whitespace-nowrap scroll space-x-10">
             {ImageData.map((image: { id: number; src: string }) => (
               <div key={image.id} className="inline-block">
-                <img src={image.src} className="w-20 h-auto" />
+                <Image
+                  src={image.src || IMAGES.TRUST}
+                  alt="technologys"
+                  width={100}
+                  height={100}
+                  className="w-20 h-auto"
+                />
               </div>
             ))}
           </div>

@@ -1,11 +1,7 @@
+import { ImagesType } from "@/components/shared/types/collectionsListTypes/ImagesType";
 import { IMAGES } from "../../public/images";
 
-interface types {
-    id:number;
-    src:string
-}
-
- const ImageData:types[] = [
+const ImageData: ImagesType[] = [
   { id: 1, src: IMAGES.TRUST },
   { id: 2, src: IMAGES.ARMOR },
   { id: 3, src: IMAGES.ARBITRUM },

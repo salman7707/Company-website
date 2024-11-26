@@ -5,9 +5,13 @@ import React from "react";
 import OurExpertise from "@/lib/OurExperties";
 import { useMyContext } from "@/contexts/MyContexts";
 export default function OfferSection() {
-  const {theme} = useMyContext();
+  const { theme } = useMyContext();
   return (
-    <div className={`${ theme === "light" ? "bg-white" : "bg-black" } bg-transparent w-full relative `}>
+    <div
+      className={`${
+        theme === "light" ? "bg-white" : "bg-black"
+      } bg-transparent w-full relative `}
+    >
       <div className="relative py-14 w-[100%] max-w-[1210px] mx-auto z-10">
         <div className="space-y-4">
           <Paragraph
@@ -18,7 +22,7 @@ export default function OfferSection() {
             WHAT WE OFFER
           </Paragraph>
           <HeaderLarge
-            color={theme === "light" ?"black" : "white"}
+            color={theme === "light" ? "black" : "white"}
             textAlign="text-center"
             fontSize="36"
             weight="medium"
@@ -35,11 +39,17 @@ export default function OfferSection() {
               className="flex lg:flex-row flex-col lg:justify-start lg:items-start items-center md:justify-center h-full w-full space-x-2"
             >
               <div>
-                <h1 className={`text font-custom ${ theme==="light" ? "text-white":"text-black" } `}>{data.id}.</h1>
+                <h1
+                  className={`text font-custom ${
+                    theme === "light" ? "text-white" : "text-black"
+                  } `}
+                >
+                  {data.id}.
+                </h1>
               </div>
               <div className="px-3 py-3 space-y-6 xl:w-full lg:w-full  w-full h-auto">
                 <HeaderLarge
-                  color={theme === "light" ?"black" : "white"}
+                  color={theme === "light" ? "black" : "white"}
                   fontSize="40"
                   smallScreenFont="36"
                   fontFamily="font-custom"
@@ -51,7 +61,7 @@ export default function OfferSection() {
                 <Paragraph
                   fontSize="extralarge"
                   textAlign="lg:text-left text-center "
-                  color={theme === "light" ?"black" : "white"}
+                  color={theme === "light" ? "black" : "white"}
                 >
                   {data.paragraph}
                 </Paragraph>

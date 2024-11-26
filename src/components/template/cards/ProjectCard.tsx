@@ -1,17 +1,17 @@
-"use client"
+"use client";
 import React from "react";
 import HeaderMedium from "../headings/HeaderMedium";
 import { useMyContext } from "@/contexts/MyContexts";
 import { GoArrowUpRight } from "react-icons/go";
+import { ProjectCardType } from "@/components/shared/types/templeteTypes/ProjectCard";
+import Image from "next/image";
 
-type data = {
-    img:string;
-    smallHeading:string;
-    heading:string;
-}
-
-export default function ProjectCard({img,smallHeading,heading}:data) {
-    const {theme} = useMyContext();
+export default function ProjectCard({
+  img,
+  smallHeading,
+  heading,
+}: ProjectCardType) {
+  const { theme } = useMyContext();
   return (
     <div
       className={` border ${
@@ -20,11 +20,13 @@ export default function ProjectCard({img,smallHeading,heading}:data) {
           : "border-transparent"
       }   w-full group h-[450px]  relative overflow-hidden z-0 rounded-md`}
     >
-      <div className="absolute bg-gradient-to-b from-primary to-primary transition-all duration-1000 ease-in-out opacity-0 group-hover:opacity-[30%] top-0 left-0 h-full w-full"></div>
-      <img
+      <div className="absolute z-10 bg-gradient-to-b from-primary to-primary transition-all duration-1000 ease-in-out opacity-0 group-hover:opacity-[30%] top-0 left-0 h-full w-full"></div>
+      <Image
         src={img}
+        layout="fill"
+        objectFit="cover"
         alt="project1"
-        className="w-full object-cover h-full block"
+        className="block z-0"
       />
       <div className="absolute bottom-0 translate-y-40 opacity-0 group-hover:translate-y-0 z-10 group-hover:opacity-100 transition-all duration-700 ease-in-out w-full text-white bg-black px-3 py-6 space-y-4 border-b-2 border-b-primary flex items-center justify-between">
         <div className="space-y-3">

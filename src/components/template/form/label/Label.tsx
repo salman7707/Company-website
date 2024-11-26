@@ -1,12 +1,5 @@
+import { LabelDataType } from "@/components/shared/types/templeteTypes/Label";
 import React from "react";
-
-interface labeldata {
-  children: React.ReactNode;
-  fontSize?: string;
-  weight?: string;
-  color?: string;
-  fontFamily?: string;
-}
 
 export default function Label({
   children,
@@ -14,7 +7,7 @@ export default function Label({
   weight,
   color,
   fontFamily,
-}: labeldata) {
+}: LabelDataType) {
   const fontSizeClass =
     fontSize === "small"
       ? "text-base"
@@ -56,7 +49,9 @@ export default function Label({
       : "font-poppins";
 
   return (
-    <label className={` ${fontClass} ${fontSizeClass} ${ColorClasses} ${weightClasses}`}>
+    <label
+      className={` ${fontClass} ${fontSizeClass} ${ColorClasses} ${weightClasses}`}
+    >
       {children}
     </label>
   );

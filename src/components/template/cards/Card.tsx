@@ -5,14 +5,7 @@ import HeaderMedium from "../headings/HeaderMedium";
 import Button from "../button/Button";
 import Paragraph from "../headings/Paragraph";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-
-interface cardInter {
-  img?: string;
-  heading?: string;
-  paragraph?: string;
-  theme?: "dark" | "light";
-  btn?: boolean;
-}
+import { cardType } from "@/components/shared/types/templeteTypes/Card";
 
 export default function Card({
   img,
@@ -20,7 +13,7 @@ export default function Card({
   heading,
   paragraph,
   theme = "dark",
-}: cardInter) {
+}: cardType) {
   return (
     <div
       className={`${

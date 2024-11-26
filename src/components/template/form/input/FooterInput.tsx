@@ -1,12 +1,5 @@
+import { FooterInputType } from "@/components/shared/types/templeteTypes/FooterInput";
 import React from "react";
-
-interface inputdata {
-  type?: string;
-  placeholder?: string;
-  value?: string;
-  width?: string;
-  onchange?: () => void;
-}
 
 export default function FooterInput({
   type,
@@ -14,7 +7,7 @@ export default function FooterInput({
   value,
   width,
   onchange,
-}: inputdata) {
+}: FooterInputType) {
   const widthClass = width === "full" ? "w-full" : "";
   return (
     <input

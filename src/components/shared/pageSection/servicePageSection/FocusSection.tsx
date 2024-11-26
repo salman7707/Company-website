@@ -20,8 +20,8 @@ export default function FocusSection() {
             Focus Industries
           </HeadingLarge>
           <Paragraph fontSize="large" color="white" textAlign="text-center">
-            Demo specializes in assembling talented blockchain development
-            teams for <br /> clients in the following sectors:
+            Demo specializes in assembling talented blockchain development teams
+            for <br /> clients in the following sectors:
           </Paragraph>
         </div>
         <div className="py-14 grid lg:grid-cols-3 grid-cols-1 gap-x-8 gap-y-8">

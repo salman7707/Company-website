@@ -1,8 +1,7 @@
+import { BenefitsDataType } from "@/components/shared/types/collectionsListTypes/BenefitsData";
 import { IMAGES } from "../../public/images";
 
-
-
-const BenefitsData = [
+const BenefitsData: BenefitsDataType[] = [
     {
         id: 1,
         src: IMAGES.SUB,

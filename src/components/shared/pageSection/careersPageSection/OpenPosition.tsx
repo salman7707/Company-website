@@ -12,11 +12,14 @@ import { IoIosArrowDown } from "react-icons/io";
 import jobs from "@/lib/AvaliableJobs";
 
 export default function OpenPosition() {
-  const [mern, setMern] = useState<{ open: boolean; id: number | null }>({open:false,id:null});
+  const [mern, setMern] = useState<{ open: boolean; id: number | null }>({
+    open: false,
+    id: null,
+  });
   const { theme } = useMyContext();
   const handlestate = (id: number) => {
-      setMern((prev) =>({ ...prev,open: !prev.open,id:id}))
-  }
+    setMern((prev) => ({ ...prev, open: !prev.open, id: id }));
+  };
   return (
     <div className="w-full max-w-[1210px] mx-auto py-10 space-y-12">
       <div className="">
@@ -31,7 +34,7 @@ export default function OpenPosition() {
       </div>
 
       <div className="space-y-4">
-        {jobs.map((data,index) => (
+        {jobs.map((data, index) => (
           <div
             key={index}
             className={`w-[89%] mx-auto rounded-3xl border ${

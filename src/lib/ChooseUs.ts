@@ -1,12 +1,7 @@
+import { ChooseUsType } from "@/components/shared/types/collectionsListTypes/ChooseUsType";
 import { IMAGES } from "../../public/images";
 
-interface chooseus {
-    id:number;
-    heading:string;
-    src:string;
-}
-
-const ChooseUs:chooseus[] = [
+const ChooseUs: ChooseUsType[] = [
     {
         id: 1,
         heading: "10+ Proven Industry Experience",
@@ -15,7 +10,7 @@ const ChooseUs:chooseus[] = [
     {
         id: 2,
         heading: "Certified Blockchain Developers",
-        src: IMAGES.FRAME1 ,
+        src: IMAGES.FRAME1,
     },
     {
         id: 3,
@@ -30,7 +25,7 @@ const ChooseUs:chooseus[] = [
     {
         id: 5,
         heading: "Fine Project Management",
-        src:IMAGES.FRAME4,
+        src: IMAGES.FRAME4,
     },
     {
         id: 6,
@@ -40,12 +35,12 @@ const ChooseUs:chooseus[] = [
     {
         id: 7,
         heading: "Custom Cryptocurrency Solutions",
-        src:IMAGES.FRAME6,
+        src: IMAGES.FRAME6,
     },
     {
         id: 8,
         heading: "Support & Maintenance Services",
-        src:IMAGES.FRAME7,
+        src: IMAGES.FRAME7,
     }
 ];
 

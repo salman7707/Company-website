@@ -6,18 +6,7 @@ import Button from "@/components/template/button/Button";
 import Paragraph from "@/components/template/headings/Paragraph";
 import { IMAGES } from "../../../../../public/images";
 import { useMyContext } from "@/contexts/MyContexts";
-
-interface HeroData {
-  imgH?: number;
-  imgW?: number;
-  img?: string;
-  imgSpin?: boolean;
-  heading?: string;
-  headingFont?: number;
-  paragraph?: string;
-  bgImg?: string;
-  imgSecondPortf?: string;
-}
+import { HeroData } from "../../types/componentTypes/HeroSection";
 
 export default function HeroSection({
   img,
@@ -30,7 +19,7 @@ export default function HeroSection({
   bgImg,
   imgSecondPortf,
 }: HeroData) {
-  const {theme} = useMyContext();
+  const { theme } = useMyContext();
   return (
     <div
       className={`${
@@ -44,7 +33,7 @@ export default function HeroSection({
             smallScreenFont="36"
             mdScreenFont="64"
             fontFamily="font-custom"
-            color={ theme === "light" ? "black": "white" }
+            color={theme === "light" ? "black" : "white"}
             weight="medium"
             leading="custom"
             textAlign="lg:text-left text-center"
@@ -55,7 +44,7 @@ export default function HeroSection({
           <Paragraph
             fontSize="large"
             fontFamily="font-manrope"
-            color={ theme === "light" ? "black": "white" }
+            color={theme === "light" ? "black" : "white"}
             weight="normal"
             textAlign="lg:text-left xs:text-center"
           >
@@ -66,7 +55,9 @@ export default function HeroSection({
           </Button>
         </div>
         <div
-          className={`lg:w-full relative group flex justify-center sm:w-1/2 xs:w-11/12 ${ img === IMAGES.PORTIMG ? "lg:py-0 md:py-52 xs:py-28" : ""} `}
+          className={`lg:w-full relative group flex justify-center sm:w-1/2 xs:w-11/12 ${
+            img === IMAGES.PORTIMG ? "lg:py-0 md:py-52 xs:py-28" : ""
+          } `}
         >
           {img === IMAGES.PORTIMG && (
             <div className="md:block absolute xl:-top-60 lg:-top-64 xs:hidden xl:right-[70%] lg:right-[50%] md:right-0 md:left-0 md:-top-10">
@@ -85,7 +76,9 @@ export default function HeroSection({
           )}
           <div
             className={`${
-              img === IMAGES.PORTIMG ? "absolute xl:-top-10 lg:-top-8 md:top-40 -top-20 xl:right-60 lg:right-36 md:right-28" : ""
+              img === IMAGES.PORTIMG
+                ? "absolute xl:-top-10 lg:-top-8 md:top-40 -top-20 xl:right-60 lg:right-36 md:right-28"
+                : ""
             }`}
           >
             <Image
@@ -105,12 +98,23 @@ export default function HeroSection({
         </div>
       </div>
       <div
-        
         className={`z-0 bg-cover bg-transparent absolute bg-center bg-no-repeat ${
-          bgImg === IMAGES.PORTBG ? "-top-6 right-0 bg-right-top xl:w-[43%] lg:w-[64%] md:w-[75%] md:h-[58%] h-[40%] lg:h-full" : bgImg === "none" ? "hidden" : "top-10 lg:h-full md:h-[45%] h-[20%] w-full"
+          bgImg === IMAGES.PORTBG
+            ? "-top-6 right-0 bg-right-top xl:w-[43%] lg:w-[64%] md:w-[75%] md:h-[58%] h-[40%] lg:h-full"
+            : bgImg === "none"
+            ? "hidden"
+            : "top-10 lg:h-full md:h-[45%] h-[20%] w-full"
         }`}
       >
-        <img src={bgImg} className={`w-full h-full bg-transparent`}  />
+        {bgImg !== "none" && (
+          <Image
+            src={bgImg || IMAGES.BGHERO} // Fallback to IMAGES.BGHERO if bgImg is undefined
+            alt="BG"
+            width={1210}
+            height={960}
+            className="w-full h-full"
+          />
+        )}
         {/* style={{
           backgroundImage: `url(${bgImg})`,
         }} */}

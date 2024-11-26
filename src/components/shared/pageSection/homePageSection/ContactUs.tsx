@@ -13,18 +13,13 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import { FaTelegram } from "react-icons/fa6";
 import { FaCalendarMinus } from "react-icons/fa6";
 import { useMyContext } from "@/contexts/MyContexts";
-
-interface data {
-  locationSec?: boolean;
-  headingSec?: boolean;
-  consultantSec?: boolean;
-}
+import { ContactUsType } from "../../types/componentTypes/ContactUsSection";
 
 export default function ContactUs({
   locationSec = true,
   headingSec = true,
   consultantSec = false,
-}: data) {
+}: ContactUsType) {
   const [location, setLocation] = useState(false);
   const { theme } = useMyContext();
   return (
@@ -71,14 +66,17 @@ export default function ContactUs({
             } lg:w-[40%] md:w-[70%] w-full mx-auto h-auto rounded-3xl border px-5 py-8 space-y-4`}
           >
             <HeadingLarge
-              color={ theme === "light" ? "black" : "white"}
+              color={theme === "light" ? "black" : "white"}
               fontFamily="font-custom"
               weight="medium"
               smallScreenFont="36"
             >
               Book a Free Consultant
             </HeadingLarge>
-            <Paragraph color={ theme === "light" ? "black" : "white"} fontSize="medium">
+            <Paragraph
+              color={theme === "light" ? "black" : "white"}
+              fontSize="medium"
+            >
               Book a slot with our senior team to discuss your project and see
               how we can apply our expertise to your idea.
             </Paragraph>
@@ -238,8 +236,8 @@ export default function ContactUs({
                     fontSize="extrasmall"
                   >
                     By clicking this button you agree to share your data with
-                    Demo. Information will be used for communication
-                    purposes only.
+                    Demo. Information will be used for communication purposes
+                    only.
                   </Paragraph>
                 </div>
               </div>
@@ -318,8 +316,8 @@ export default function ContactUs({
                       fontSize="extrasmall"
                     >
                       By clicking this button you agree to share your data with
-                      Demo. Information will be used for communication
-                      purposes only.
+                      Demo. Information will be used for communication purposes
+                      only.
                     </Paragraph>
                   </div>
                 </div>

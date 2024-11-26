@@ -175,19 +175,31 @@ export default function FormSection() {
                 >
                   Place your Cv *
                 </Label>
-                <div className={`w-full border rounded-xl ${ theme === "light" ? "bg-white" : "bg-medGray" }  border-transparent`}>
+                <div
+                  className={`w-full border rounded-xl ${
+                    theme === "light" ? "bg-white" : "bg-medGray"
+                  }  border-transparent`}
+                >
                   <label
                     htmlFor="file-upload"
                     className=" cursor-pointer rounded-md bg-gray-800 p-6 text-center text-white"
                   >
-                    <p className={` md:text-2xl text-lg ${ theme === "light" ? "text-black" : "text-white"} `}>
+                    <p
+                      className={` md:text-2xl text-lg ${
+                        theme === "light" ? "text-black" : "text-white"
+                      } `}
+                    >
                       Click to upload files, or drag & drop files here
                       <span className="text-blue-500 text-[22px] pl-2">
                         browse
                       </span>
                     </p>
 
-                    <p className={`mt-2 text-sm ${ theme === "light" ? "text-black" : "text-white"}`}>
+                    <p
+                      className={`mt-2 text-sm ${
+                        theme === "light" ? "text-black" : "text-white"
+                      }`}
+                    >
                       (CV, Maximum file size is 4 MB)
                     </p>
                     <Input id="file-upload" type="file" className="hidden" />
@@ -200,7 +212,11 @@ export default function FormSection() {
                 </Button>
               </div>
               <div className="w-full flex justify-center">
-                <Paragraph color={ theme === "light" ? "gray" : "white"} textAlign="center" fontSize="small">
+                <Paragraph
+                  color={theme === "light" ? "gray" : "white"}
+                  textAlign="center"
+                  fontSize="small"
+                >
                   By clicking this button you agree to share your data with
                   Demo. Information will be used for communication purposes
                   only.

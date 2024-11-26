@@ -1,8 +1,4 @@
-interface expertiseData {
-    id: number;
-    heading: string;
-    paragraph: string;
-}
+import { expertiseData } from "@/components/shared/types/collectionsListTypes/ExpertiesType";
 
 const OurExpertise: expertiseData[] = [
     {

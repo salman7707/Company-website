@@ -1,13 +1,7 @@
+import { focusType } from "@/components/shared/types/collectionsListTypes/FocusType";
 import { IMAGES } from "../../public/images";
 
-interface focus {
-    id: number;
-    img: string;
-    heading: string;
-    paragraph: string;
-}
-
-const FocusData: focus[] = [
+const FocusData: focusType[] = [
     {
         id: 1,
         img: IMAGES.ED,
