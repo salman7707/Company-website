@@ -29,7 +29,7 @@ export default function Footer() {
               className=" "
             />
             <Paragraph color="gray" textAlign="text-center">
-              © 2024 NetixSol Inc. All rights reserved.
+              © 2024 Demo Inc. All rights reserved.
             </Paragraph>
             <HeadingMedium
               color="white"

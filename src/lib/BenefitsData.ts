@@ -7,13 +7,13 @@ const BenefitsData = [
         id: 1,
         src: IMAGES.SUB,
         heading: "Health Insurance",
-        paragraph: "NetixSol team members enjoy comprehensive health coverage benefits."
+        paragraph: "Demo team members enjoy comprehensive health coverage benefits."
     },
     {
         id: 2,
         src: IMAGES.PF,
         heading: "Provident Funds",
-        paragraph: "At NetixSol you have access to policies that help you in saving money for the long run.Access performance-based promotions, pay raises, and growth opportunities."
+        paragraph: "At Demo you have access to policies that help you in saving money for the long run.Access performance-based promotions, pay raises, and growth opportunities."
     },
     {
         id: 3,
@@ -31,7 +31,7 @@ const BenefitsData = [
         id: 5,
         src: IMAGES.FU,
         heading: "Fuel Allowance",
-        paragraph: "Your daily travel expense turns into a breeze once you get to join NetixSol."
+        paragraph: "Your daily travel expense turns into a breeze once you get to join Demo."
     },
     {
         id: 6,
@@ -48,7 +48,7 @@ const BenefitsData = [
     {
         id: 8,
         src: IMAGES.ANN,
-        heading: "NetixSol Annual Anniversary",
+        heading: "Demo Annual Anniversary",
         paragraph: "Enjoy our annual anniversary celebrations, where we honor your dedication, growth, and success"
     },
     {

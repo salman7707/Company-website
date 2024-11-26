@@ -20,7 +20,7 @@ export default function BenefitsSection() {
             Perk & Benefits
           </HeadingLarge>
           <Paragraph fontSize="large" color="white" textAlign="text-center">
-          NetixSol specializes in assembling talented blockchain development teams for
+          Demo specializes in assembling talented blockchain development teams for
           clients in the following sectors:
           </Paragraph>
         </div>

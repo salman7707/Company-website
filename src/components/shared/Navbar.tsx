@@ -56,9 +56,9 @@ export default function Navbar() {
 
       <div className="flex-1 hidden relative  lg:flex items-center justify-between ">
         <div
-          className={`flex items-center xl:px-14 lg:px-5 justify-center font-custom ${
+          className={`flex items-center xl:px-20 lg:px-5 justify-center font-custom ${
             theme === "light" ? "text-black" : "text-white"
-          } font-medium text-xl xl:space-x-10 lg:space-x-6`}
+          } font-medium text-xl xl:space-x-12 lg:space-x-6`}
         >
           <div className="flex justify-between items-center">
             <Link href={"/services"}>Services</Link>
@@ -69,7 +69,7 @@ export default function Navbar() {
           <div className="flex justify-between items-center">
             <Link href={"/courses"}>Courses</Link>
           </div>
-          <div className="flex  justify-between items-center">Discover</div>
+          {/* <div className="flex  justify-between items-center">Discover</div> */}
           <div
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -124,7 +124,7 @@ export default function Navbar() {
       </div>
       {hamburState && (
         <div
-          className={`transition-all duration-700 ease-linear absolute space-y-4 z-10 top-1 shadow-2xl bg-white w-[80%] h-full px-10 py-10 ${
+          className={`transition-all duration-700 ease-linear absolute space-y-4 z-10 top-1 shadow-2xl bg-white w-[80%] h-auto px-10 py-10 ${
             hamburState ? "translate-x-0" : "-translate-x-full"
           }`}
         >

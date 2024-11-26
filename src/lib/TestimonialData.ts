@@ -16,13 +16,13 @@ const Testimonial: data[] = [
         id:2,
         heading: "Frank Fuller",
         location: "United State of America",
-        massage: "Very knowledgeable in their area. Did a great job completing my NFT Project, with little to no problems. Website was exactly what I was looking for with surprisingly little guidance. Will continue using netixsol for future work.",
+        massage: "Very knowledgeable in their area. Did a great job completing my NFT Project, with little to no problems. Website was exactly what I was looking for with surprisingly little guidance. Will continue using Demo for future work.",
     },
     {
         id:3,
         heading: "Ivan (Jax)",
         location: "Canada",
-        massage: "NetixSol was very responsive while being on opposite time due to time zone, his work is efficient and effective, will be developing a business partnership moving forward!",
+        massage: "Demo was very responsive while being on opposite time due to time zone, his work is efficient and effective, will be developing a business partnership moving forward!",
     },
     {
         id:4,

@@ -20,7 +20,7 @@ export default function FocusSection() {
             Focus Industries
           </HeadingLarge>
           <Paragraph fontSize="large" color="white" textAlign="text-center">
-            NetixSol specializes in assembling talented blockchain development
+            Demo specializes in assembling talented blockchain development
             teams for <br /> clients in the following sectors:
           </Paragraph>
         </div>

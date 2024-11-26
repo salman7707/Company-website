@@ -202,7 +202,7 @@ export default function FormSection() {
               <div className="w-full flex justify-center">
                 <Paragraph color={ theme === "light" ? "gray" : "white"} textAlign="center" fontSize="small">
                   By clicking this button you agree to share your data with
-                  NetixSol. Information will be used for communication purposes
+                  Demo. Information will be used for communication purposes
                   only.
                 </Paragraph>
               </div>

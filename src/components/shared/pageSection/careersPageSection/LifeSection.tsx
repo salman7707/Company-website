@@ -17,17 +17,17 @@ export default function LifeSection() {
           smallScreenFont="36"
           textAlign="text-center"
         >
-          Life at Netixsol
+          Life at Demo
         </HeaderLarge>
       </div>
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-x-4 gap-y-6 py-12 xl:px-0 px-6"> 
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-x-4 gap-y-6 py-12 justify-items-center xl:px-0 px-6 "> 
         {LifeImages.map((data) => (
           <div className="rounded-3xl " key={data.id}>
             <Image
               src={IMAGES.TOUR}
               width={300}
               height={228}
-              alt="netixsol"
+              alt="Demo"
               className="rounded-xl"
             />
           </div>

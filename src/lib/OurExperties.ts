@@ -38,7 +38,7 @@ const OurExpertise: expertiseData[] = [
     {
         id: 7,
         heading: "DApp Development",
-        paragraph: "NetixSol has extensive expertise in creating cross-market dApp solutions on various blockchain platforms, including independent apps and protocols. Regardless of the project’s scale or domain."
+        paragraph: "Demo has extensive expertise in creating cross-market dApp solutions on various blockchain platforms, including independent apps and protocols. Regardless of the project’s scale or domain."
     },
     {
         id: 8,

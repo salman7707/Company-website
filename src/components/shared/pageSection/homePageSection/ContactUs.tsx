@@ -51,7 +51,7 @@ export default function ContactUs({
           >
             Whether you have a technical questionor ready to start cooperation
             <br />
-            NetixSol team remain committed to assist with your selection needs
+            Demo team remain committed to assist with your selection needs
           </Paragraph>
         </div>
       )}
@@ -88,7 +88,7 @@ export default function ContactUs({
               className="w-full"
               fontFamily="font-custom"
             >
-              <div className="flex items-center justify-center space-x-2">
+              <div className="flex items-center justify-center gap-x-3">
                 Schedule a Call <FaCalendarMinus />
               </div>
             </Button>
@@ -238,7 +238,7 @@ export default function ContactUs({
                     fontSize="extrasmall"
                   >
                     By clicking this button you agree to share your data with
-                    NetixSol. Information will be used for communication
+                    Demo. Information will be used for communication
                     purposes only.
                   </Paragraph>
                 </div>
@@ -318,7 +318,7 @@ export default function ContactUs({
                       fontSize="extrasmall"
                     >
                       By clicking this button you agree to share your data with
-                      NetixSol. Information will be used for communication
+                      Demo. Information will be used for communication
                       purposes only.
                     </Paragraph>
                   </div>

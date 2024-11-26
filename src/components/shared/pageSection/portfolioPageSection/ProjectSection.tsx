@@ -49,7 +49,7 @@ export default function ProjectSection() {
             ))}
           </div>
         </div>
-        <div className="w-full grid xl:grid-cols-3 lg:grid-cols-2 justify-content-center gap-x-8 gap-y-8 xl:px-0 lg::px-20 px-2">
+        <div className="w-full grid xl:grid-cols-3 lg:grid-cols-2 justify-content-center gap-x-8 gap-y-8 xl:px-0 lg::px-20 px-4">
           {project.map((data, index) => (
             <div key={index}>
                 <ProjectCard

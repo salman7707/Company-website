@@ -19,7 +19,7 @@ export default function VisionSection() {
         Vision
       </HeaderLarge>
       <Paragraph color={ theme === "light" ? "black" :"white" } fontSize="extralarge" textAlign="text-center" weight="medium">
-        At Netixsol, we are propelling towards a decentralized future by
+        At Demo, we are propelling towards a decentralized future by
         providing transparent, secure, and trustless systems that eliminate the
         need for intermediaries. Through cryptographic techniques and
         decentralized networks, blockchain ensures data integrity and empowers

@@ -19,7 +19,7 @@ export default function CareerHeadingSection() {
           fontFamily="font-custom"
           weight="medium"
         >
-          Want to join the <span className="text-primary">NetixSol team?</span>
+          Want to join the <span className="text-primary">Demo team?</span>
         </HeaderLarge>
         <Paragraph
           color={theme === "light" ? "black" : "white"}
@@ -28,7 +28,7 @@ export default function CareerHeadingSection() {
           weight="normal"
           textAlign="text-center"
         >
-          NetixSol is a Blockchain development Compnay for innovative Web3, AI &
+          Demo is a Blockchain development Compnay for innovative Web3, AI &
           Machine Learning technology focused on design, development, and
           blockchain consulting.Become the Blockchain Wizard! Join our Dgen
           Revolution Now!

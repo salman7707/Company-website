@@ -13,7 +13,7 @@ export default function About() {
   const {theme} = useMyContext();
   return (
     <div className={`${theme === "light"? "bg-white" : "bg-black" }`}>
-        <HeroSection heading='About US' headingFont={64} paragraph='NetixSol Pvt LTD. is a blockchain development company. We are pioneers in the world of blockchain technology. We specialize in providing innovative and advanced blockchain solutions that empower businesses to harness the full potential of decentralized, secure, and transparent systems. Our journey began with a vision to revolutionize industries through blockchain, and today, we stand as a leading force in the blockchain development space.'
+        <HeroSection heading='About US' headingFont={64} paragraph='Demo Pvt LTD. is a blockchain development company. We are pioneers in the world of blockchain technology. We specialize in providing innovative and advanced blockchain solutions that empower businesses to harness the full potential of decentralized, secure, and transparent systems. Our journey began with a vision to revolutionize industries through blockchain, and today, we stand as a leading force in the blockchain development space.'
         img={IMAGES.ABOUTBG}
         bgImg='none'
         imgH={200}

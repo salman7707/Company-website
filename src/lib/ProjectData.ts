@@ -45,13 +45,6 @@ const ProjectData:data[] = [
         type:"SMM Webdevelopment",
     },
     {
-        id: 6,
-        src: IMAGES.PROJ6,
-        headingsmall: "Logo Maker",
-        heading: "Application + SEO",
-        type:"SEO",
-    },
-    {
         id: 7,
         src: IMAGES.PROJ7,
         headingsmall: "The Grand Central Mall",

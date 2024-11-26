@@ -26,7 +26,7 @@ export default function OpenPosition() {
           smallScreenFont="36"
           color={theme === "white" ? "black" : "white"}
         >
-          Open positions at NetixSol
+          Open positions at Demo
         </HeaderLarge>
       </div>
 

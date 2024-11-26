@@ -17,7 +17,7 @@ export default function Portfolio() {
         bgImg={IMAGES.PORTBG}
         imgSpin={false}
         heading="Our Work"
-        paragraph="NetixSol is a product development house for Web3, AI & Machine
+        paragraph="Demo is a product development house for Web3, AI & Machine
           Learning technology, focused on design, development, and
           Blockchain consulting. Check out some projects we’ve produced for
           visionary builders and Blockchain entrepreneurs."
