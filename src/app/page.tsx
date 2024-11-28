@@ -43,7 +43,3 @@ export default function Home() {
   );
 }
 
-// style={{
-//   backgroundImage: "url('/images/sideImage/herobg.png')",
-// }}
-// className="pt-44 bg-center h-auto bg-cover block align-middle bg-no-repeat w-full bg-white"

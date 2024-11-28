@@ -6,6 +6,13 @@ import { useMyContext } from "@/contexts/MyContexts";
 import TeamData from "@/lib/TeamData";
 import React from "react";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 export default function TeamSection() {
   const { theme } = useMyContext();
   return (
@@ -24,12 +31,47 @@ export default function TeamSection() {
             Meet Our Experts
           </HeadingLarge>
         </div>
-        <div className="py-10 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-items-center xl:gap-4 md:gap-3 gap-5 md:px-5 px-2">
-          {TeamData.map((data) => (
-            <div key={data.id}>
-              <TeamCard name={data.name} role={data.role} />
-            </div>
-          ))}
+        <div className="xl:w-full lg:w-[95%] md:w-[90%] w-[90%] lg:py-6 py-8 overflow-hidden">
+          <Swiper
+            spaceBetween={20}
+            loop={true}
+            centeredSlides={false}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={false}
+            navigation={false}
+            slidesPerView={3}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 40,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 15,
+              },
+            }}
+            modules={[Autoplay, Pagination, Navigation]}
+            className="mySwiper transition-all duration-1000 ease-in-out"
+          >
+            {TeamData.map((data) => (
+              <SwiperSlide key={data.id}>
+                <div key={data.id}>
+                  <TeamCard name={data.name} role={data.role} />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </div>

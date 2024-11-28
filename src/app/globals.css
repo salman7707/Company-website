@@ -37,14 +37,13 @@
   --primary: #775edc;
   --secondary: #41295a;
   --secondaryPurple: #664ba3;
-  --darkpurple:#41295A;
+  --darkpurple: #41295a;
   --gray: #909090;
   --lightgray: #333333;
-  --lightblack:#0E1012;
-  --secondarygray:#E7E8EA;
+  --lightblack: #0e1012;
+  --secondarygray: #e7e8ea;
   --yellow: #faca15;
   --medGray: #272727;
-  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -79,10 +78,10 @@
 .logo {
   overflow-x: hidden;
   overflow-y: hidden;
- padding-top:100px;
- padding-bottom:60px;
+  padding-top: 100px;
+  padding-bottom: 60px;
   white-space: nowrap;
-  width:90%;
+  width: 90%;
 }
 
 .logoSlide {
@@ -108,11 +107,17 @@
   width: auto;
 }
 
-.scroll{
+.scroll {
   animation: movetoleft 18s infinite linear;
 }
-.scrolll{
+.scrolll {
   animation: movetoleft 2s infinite linear;
+}
+
+@media (max-width: 600px) {
+  .scroll-small {
+    animation: movetoleft 14s infinite linear;
+  }
 }
 
 @keyframes movetoleft {
@@ -125,15 +130,15 @@
 }
 
 .text {
-    font-size: 70px;
-    font-weight: 500;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #4e54c8;
+  font-size: 70px;
+  font-weight: 500;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #4e54c8;
 }
 
 @keyframes spin {
   to {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 .animate-spin {
@@ -141,64 +146,62 @@
 }
 
 .animate-blur {
-  animation: blurScreen 5s linear infinite
+  animation: blurScreen 5s linear infinite;
 }
-
 
 @keyframes blurScreen {
   0% {
-      filter: brightness(.8)
+    filter: brightness(0.8);
   }
 
   50% {
-      filter: brightness(1)
+    filter: brightness(1);
   }
 
   to {
-      filter: brightness(1.3)
+    filter: brightness(1.3);
   }
 }
 
 @keyframes pulse {
   50% {
-      opacity: .1;
+    opacity: 0.1;
   }
 }
 .animate-pulse {
   animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-.animate-scroll{
+.animate-scroll {
   animation: search2 2s linear infinite;
 }
 
 @keyframes search2 {
   0% {
-      transform: translate(0)
+    transform: translate(0);
   }
 
   50% {
-      transform: translate(-5px)
-
+    transform: translate(-5px);
   }
 
   75% {
-      transform: translate(5px)
+    transform: translate(5px);
   }
 
   to {
-      transform: translate(0)
+    transform: translate(0);
   }
 }
 
-.move-horizantal{
+.move-horizantal {
   animation: movehoriandblur 5s linear infinite;
 }
 
 @keyframes movehoriandblur {
   0% {
     transform: translatex(-3px);
-    filter: opacity(0)
+    filter: opacity(0);
   }
   50% {
     transform: translate(24px);
@@ -206,6 +209,6 @@
   }
   100% {
     transform: translate(0px);
-    filter: opacity(0)
+    filter: opacity(0);
   }
 }

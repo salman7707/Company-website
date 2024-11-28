@@ -1,6 +1,6 @@
 export const IMAGES = {
     LOGO:"/images/icons/logo.svg",
-    LOGOW:"/images/sideImage/Netixsol_Logo 1.svg",
+    LOGOW:"/images/sideImage/logow.svg",
     BGHERO:"/images/sideImage/herobg.png",
     HEROMAIN:"/images/sideImage/heromain.svg",
     OFFER:"/images/sideImage/offerpix.png",

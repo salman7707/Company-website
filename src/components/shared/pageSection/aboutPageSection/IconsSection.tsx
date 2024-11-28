@@ -8,7 +8,7 @@ export default function IconsSection() {
   const {theme} = useMyContext();
   return (
     <div className="w-full max-w-[1210px] mx-auto py-20">
-      <div className="grid lg:grid-cols-3 grid-cols-1 w-[80%] mx-auto gap-y-28">
+      <div className="grid lg:grid-cols-3 grid-cols-2 w-[80%] mx-auto lg:gap-y-28 gap-x-14 gap-y-16">
         {AboutUs.map((data) => (
           <div
             key={data.id}
@@ -29,6 +29,7 @@ export default function IconsSection() {
               color={ theme=== "light" ?"black":"white" }
               fontFamily="font-custom"
               weight="medium"
+              textAlign="center"
             >
               {data.heading}
             </HeadingMedium>

@@ -27,7 +27,7 @@ export default function HeroSection({
       }   h-auto relative`}
     >
       <div className="flex lg:flex-row flex-col-reverse items-center relative z-10 justify-end xl:w-full lg:w-[90%] max-w-[1210px] mx-auto gap-4">
-        <div className="lg:w-full md:w-[40%] w-11/12 xs:items-center py-8 space-y-6 flex lg:items-start justify-between flex-col">
+        <div className="lg:w-full md:w-[40%] w-11/12 xs:items-center py-8 space-y-6 flex lg:items-start justify-between flex-col px-4">
           <HeadingLarge
             fontSize={`${headingFont}`}
             smallScreenFont="36"
@@ -89,7 +89,6 @@ export default function HeroSection({
                   : ""
               } `}
               alt="dimand"
-              layout="intrinsic"
               height={imgH || 100}
               width={imgW || 100}
               sizes="(max-width:640px)100vw,(max-width:1024px)50vw,460px"

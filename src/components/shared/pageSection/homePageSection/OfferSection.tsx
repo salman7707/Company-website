@@ -12,7 +12,7 @@ import OfferButton from "@/lib/OfferBtn";
 export default function OfferSection() {
   const { theme } = useMyContext();
   return (
-    <div className="xl:w-full lg:w-[90%] w-[96%] z-10 relative max-w-[1210px] py-28 mx-auto lg:space-y-0 space-y-3 flex lg:flex-row xs:flex-col xl:items-end items-center justify-center lg:space-x-3">
+    <div className="xl:w-full lg:w-[90%] w-[95%] z-10 relative max-w-[1210px] py-28 mx-auto lg:space-y-0 space-y-3 flex lg:flex-row xs:flex-col xl:items-end items-center justify-center lg:space-x-3 md:px-0  px-5">
       <div className="lg:w-[50%] w-full flex items-center">
         <Image src={IMAGES.OFFER} alt="Offer" width={578} height={518} />
       </div>

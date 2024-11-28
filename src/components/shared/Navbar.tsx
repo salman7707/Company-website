@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IMAGES } from "../../../public/images";
 import Button from "../template/button/Button";
 import { IoIosArrowDown } from "react-icons/io";
@@ -15,6 +15,7 @@ import navData from "@/lib/navbarData";
 import navDataMob from "@/lib/navDataMobile";
 
 export default function Navbar() {
+  const Ref = useRef<HTMLDivElement | null>(null);
   const { theme } = useMyContext();
   const [open, setOpen] = useState(false);
   const [hamburState, setHamburState] = useState(false);
@@ -35,6 +36,17 @@ export default function Navbar() {
     }, 300);
   };
 
+  const handleoutsideclick = (e: MouseEvent) => {
+    if (Ref.current && !Ref.current.contains(e.target as Node)) {
+      setHamburState(false)
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("mousedown", handleoutsideclick);
+    return () => window.removeEventListener("mousedown", handleoutsideclick);
+  }, []);
+
   return (
     <div
       className={`${
@@ -47,9 +59,8 @@ export default function Navbar() {
         <Link href={"/"}>
           <Image
             src={theme === "light" ? IMAGES.LOGO : IMAGES.LOGOW}
-            width={230}
-            height={160}
-            layout="intrinsic"
+            width={0}
+            height={0}
             alt="logo"
             className=" md:w-[230px] h-auto w-[170px]"
           />
@@ -118,6 +129,7 @@ export default function Navbar() {
       </div>
       {hamburState && (
         <div
+          ref={Ref}
           className={`transition-all duration-700 ease-linear absolute space-y-4 z-10 top-1 shadow-2xl bg-white w-[80%] h-auto px-10 py-10 ${
             hamburState ? "translate-x-0" : "-translate-x-full"
           }`}
